@@ -12,19 +12,23 @@
   max-width: 600px !important;
   max-height: 600px !important;
   margin: 2rem auto !important;
-  overflow: auto !important;
+  overflow: visible !important;
   padding: 1rem !important;
   background: #f8f9fa !important;
   border-radius: 4px !important;
   border: 1px solid #dee2e6 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .mermaid svg,
 .docusaurus-mermaid-container svg {
-  max-width: 600px !important;
+  max-width: 100% !important;
   max-height: 600px !important;
   width: auto !important;
   height: auto !important;
+  object-fit: contain !important;
 }
 
 .mermaid--zoomable,
