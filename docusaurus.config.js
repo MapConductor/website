@@ -24,6 +24,29 @@ const config = {
       theme: {
         light: 'neutral',
         dark: 'forest'
+      },
+      options: {
+        fontSize: 16,
+        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif',
+        flowchart: {
+          htmlLabels: true,
+          curve: 'basis',
+          padding: 20
+        },
+        sequence: {
+          htmlLabels: true,
+          diagramMarginX: 20,
+          diagramMarginY: 20,
+          boxMargin: 20,
+          messageMargin: 50,
+          actorFontSize: 16,
+          noteFontSize: 16,
+          messageFontSize: 16
+        },
+        gantt: {
+          htmlLabels: true,
+          fontSize: 16
+        }
       }
     }
   },
