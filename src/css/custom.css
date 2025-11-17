@@ -40,7 +40,7 @@
 
 .mermaid--zoomable::after,
 [data-zoomable="true"]::after {
-  content: '🔍 クリックで拡大' !important;
+  content: '🔍 expand the image' !important;
   display: block !important;
   text-align: center !important;
   font-size: 12px !important;
