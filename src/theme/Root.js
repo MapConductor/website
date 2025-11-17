@@ -93,7 +93,8 @@ export default function RootWrapper(props) {
     };
 
     const enhanceDiagrams = () => {
-      const diagrams = document.querySelectorAll('.mermaid');
+      // Support both .mermaid and .docusaurus-mermaid-container
+      const diagrams = document.querySelectorAll('.mermaid, .docusaurus-mermaid-container');
       diagrams.forEach((diagram) => {
         if (diagram.dataset.zoomable === 'true') {
           return;
