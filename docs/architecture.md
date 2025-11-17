@@ -18,7 +18,7 @@ flowchart LR
 
   subgraph MC["MapConductor SDK (Android)"]
     API["Unified Map API"]
-    Core["Core features\n(map, markers, shapes, events)"]
+    Core["Core features<br/>(map, markers, shapes, events)"]
     Drivers["Map SDK drivers"]
   end
 
@@ -53,9 +53,8 @@ In the long term, we also envision optional cloud components that can help with 
 ```mermaid
 flowchart TB
   App["Mobile apps"] --> MCSDK["MapConductor SDK"]
-  MCSDK --> Cloud["Future MapConductor cloud\n(sync & geofencing)"]
-  Cloud --> External["External systems\n(dashboards, services)"]
+  MCSDK --> Cloud["Future MapConductor cloud<br/>(sync & geofencing)"]
+  Cloud --> External["External systems<br/>(dashboards, services)"]
 ```
 
 For now, the main focus of the project is the Android SDK and its unified API. Detailed cloud architecture and implementation choices will be documented separately when they are ready to share.
-

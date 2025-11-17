@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '@docusaurus/Layout';
+import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 
 export default function Home() {
@@ -32,4 +32,3 @@ export default function Home() {
     </Layout>
   );
 }
-

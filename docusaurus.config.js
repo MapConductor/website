@@ -4,16 +4,28 @@
 const config = {
   title: 'MapConductor',
   tagline: 'A unified map SDK for mobile developers',
-  url: 'https://example.com',
+  url: 'https://mapconductor.com',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'mapconductor',
   projectName: 'mapconductor-site',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  markdown: {
+    mermaid: true
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   i18n: {
     defaultLocale: 'en',
     locales: ['en']
+  },
+  themeConfig: {
+    mermaid: {
+      theme: {
+        light: 'neutral',
+        dark: 'forest'
+      }
+    }
   },
   presets: [
     [
@@ -33,4 +45,3 @@ const config = {
 };
 
 module.exports = config;
-
