@@ -10,7 +10,6 @@ const config = {
   organizationName: 'mapconductor',
   projectName: 'mapconductor-site',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   markdown: {
     mermaid: true
   },
@@ -33,7 +32,8 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js')
+          sidebarPath: require.resolve('./sidebars.js'),
+          onBrokenMarkdownLink: 'warn'
         },
         blog: false,
         theme: {
