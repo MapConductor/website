@@ -10,7 +10,6 @@
 .mermaid,
 .docusaurus-mermaid-container {
   max-width: 600px !important;
-  max-height: 600px !important;
   margin: 2rem auto !important;
   overflow: visible !important;
   padding: 1rem !important;
@@ -18,8 +17,10 @@
   border-radius: 4px !important;
   border: 1px solid #dee2e6 !important;
   display: flex !important;
+  flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
+  gap: 0.5rem !important;
 }
 
 .mermaid svg,
@@ -28,7 +29,7 @@
   max-height: 600px !important;
   width: auto !important;
   height: auto !important;
-  object-fit: contain !important;
+  display: block !important;
 }
 
 .mermaid--zoomable,
@@ -44,7 +45,8 @@
   text-align: center !important;
   font-size: 12px !important;
   color: #6c757d !important;
-  margin-top: 0.5rem !important;
+  width: 100% !important;
+  flex-shrink: 0 !important;
 }
 
 /* Zoom overlay */
