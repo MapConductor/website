@@ -7,35 +7,39 @@
 }
 
 /* Mermaid diagrams */
-.mermaid {
-  max-width: 100%;
-  min-height: 400px;
-  margin: 2rem auto;
-  overflow-x: auto;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-radius: 4px;
-  border: 1px solid #dee2e6;
+.mermaid,
+.docusaurus-mermaid-container {
+  max-width: 100% !important;
+  min-height: 400px !important;
+  margin: 2rem auto !important;
+  overflow-x: auto !important;
+  padding: 1rem !important;
+  background: #f8f9fa !important;
+  border-radius: 4px !important;
+  border: 1px solid #dee2e6 !important;
 }
 
-.mermaid svg {
-  max-width: 100%;
-  min-height: 400px;
-  height: auto;
+.mermaid svg,
+.docusaurus-mermaid-container svg {
+  max-width: 100% !important;
+  min-height: 400px !important;
+  height: auto !important;
 }
 
-.mermaid--zoomable {
-  cursor: zoom-in;
-  position: relative;
+.mermaid--zoomable,
+[data-zoomable="true"] {
+  cursor: zoom-in !important;
+  position: relative !important;
 }
 
-.mermaid--zoomable::after {
-  content: '🔍 クリックで拡大';
-  display: block;
-  text-align: center;
-  font-size: 12px;
-  color: #6c757d;
-  margin-top: 0.5rem;
+.mermaid--zoomable::after,
+[data-zoomable="true"]::after {
+  content: '🔍 クリックで拡大' !important;
+  display: block !important;
+  text-align: center !important;
+  font-size: 12px !important;
+  color: #6c757d !important;
+  margin-top: 0.5rem !important;
 }
 
 /* Zoom overlay */
