@@ -16,9 +16,9 @@ const LOCALE_CONTENT = {
     ),
     paragraphs: [
       <>
-        MapConductor is an open-source SDK that lets you control multiple Android map
-        SDKs through a single, easy-to-learn API. Instead of rewriting your app whenever
-        you change map providers, you focus on your app — not on each vendor&apos;s quirks.
+        MapConductor is an open-source SDK that lets you work with multiple map SDKs through
+        a unified API. Instead of relearning each provider&apos;s API, you can focus on what
+        matters: displaying your data on the map.
       </>,
       <>
         The project is aimed at general-purpose location-based applications and is built
@@ -45,9 +45,9 @@ const LOCALE_CONTENT = {
     ),
     paragraphs: [
       <>
-        MapConductor は、複数の Android 向け地図 SDK を単一のわかりやすい API でまとめて扱える
-        オープンソース SDK です。地図プロバイダを変更するたびにアプリのコードを書き直すのではなく、
-        アプリ本体に集中できるようにすることを目指しています。
+        MapConductor は、複数の地図 SDK を統一された API で扱えるオープンソース SDK です。
+        地図プロバイダごとに API の使い方を学び直す必要がなく、地図上のデータ表示という
+        本来やりたいことに集中できます。
       </>,
       <>
         一般的な位置情報アプリケーション向けに設計されており、Android や iOS に不慣れな開発者でも、
@@ -74,10 +74,9 @@ const LOCALE_CONTENT = {
     ),
     paragraphs: [
       <>
-        MapConductor es un SDK de código abierto que permite controlar varios SDK de mapas
-        para Android a través de una única API sencilla. En lugar de reescribir tu app cada
-        vez que cambias de proveedor de mapas, puedes centrarte en tu aplicación, no en las
-        particularidades de cada proveedor.
+        MapConductor es un SDK de código abierto que permite trabajar con varios SDK de mapas
+        mediante una API unificada. En lugar de reaprender la API de cada proveedor, puedes
+        concentrarte en lo que importa: mostrar tus datos en el mapa.
       </>,
       <>
         El proyecto está pensado para aplicaciones de geolocalización de propósito general y
