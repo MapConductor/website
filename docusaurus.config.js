@@ -68,7 +68,7 @@ const config = {
         },
         {
           type: 'localeDropdown',
-          position: 'right'
+          position: 'left'
         }
       ]
     }

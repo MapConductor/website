@@ -110,17 +110,20 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {content.paragraphs.map((para, index) => (
-          <p key={index}>{para}</p>
-        ))}
-        <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
-          <Link className="button button--primary" to="/docs/intro">
-            {content.buttons.getStarted}
-          </Link>
-          <Link className="button button--secondary" to="/docs/developers">
-            {content.buttons.developers}
-          </Link>
-        </div>
+        <section className='contents'>
+          {content.paragraphs.map((para, index) => (
+            <p key={index}>{para}</p>
+          ))}
+          
+          <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
+            <Link className="button button--primary" to="/docs/intro">
+              {content.buttons.getStarted}
+            </Link>
+            <Link className="button button--secondary" to="/docs/developers">
+              {content.buttons.developers}
+            </Link>
+          </div>
+        </section>
       </main>
     </Layout>
   );

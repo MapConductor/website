@@ -127,32 +127,35 @@ $primary: #0078d4;
 }
 
 .top {
-  padding: 4rem 1.5rem;
   max-width: 960px;
   margin: 0 auto;
 
   .welcome {
     background-image: url('/static/img/top-background.jpg');
     background-size: cover;
-    background-position: middle;
+    background-position: center;
     position: relative;
     width: 100%;
-    height: 300px;
+    height: auto;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
-    flex-direction: row-reverse;
+    flex-direction: row;
     
     .caption {
-      width: 400px;
+      width: 300px;
       height: auto;
+      text-align: center;
+      flex-grow: 1;
+      margin: 10px auto;
+      -webkit-text-stroke: 1px #ffffffaa;
     }
 
     .mapcat {
       position: relative;
-      height: 100%;
-      left: 0px;
+      height: 300px;
       width: 300px;
+      margin: auto;
 
       #mapcat_image {
         position: absolute;
@@ -184,5 +187,9 @@ $primary: #0078d4;
         }
       }
     }
+  }
+
+  .contents {
+    margin: 1em;
   }
 }
