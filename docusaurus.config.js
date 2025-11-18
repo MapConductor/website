@@ -17,7 +17,12 @@ const config = {
   themes: ['@docusaurus/theme-mermaid'],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en']
+    locales: ['en', 'ja'],
+    localeConfigs: {
+      ja: {
+        label: '日本語'
+      }
+    }
   },
   themeConfig: {
     mermaid: {
@@ -48,6 +53,21 @@ const config = {
           fontSize: 16
         }
       }
+    },
+    navbar: {
+      title: 'MapConductor',
+      items: [
+        {
+          type: 'docSidebar',
+          sidebarId: 'docs',
+          position: 'left',
+          label: 'Docs'
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right'
+        }
+      ]
     }
   },
   presets: [
