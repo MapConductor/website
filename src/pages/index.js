@@ -17,13 +17,15 @@ export default function Home() {
       }
     >
       <main className='top'>
-        <h1>MapConductor</h1>
-        <h2>{
-          isJa
-            ? 'モバイル開発者のための統一された地図SDK'
-            : 'A unified map SDK for mobile developers'
-        }</h2>
         <div className='welcome'>
+          <div className='caption'>
+            <h1>MapConductor</h1>
+            <h2>{
+              isJa
+                ? 'モバイル開発者のための統一された地図SDK'
+                : 'A unified map SDK for mobile developers'
+            }</h2>
+          </div>
           <div className='mapcat'>
             <img src="/img/welcome.png" id="mapcat_image" />
             <div id="mapcat_message">
