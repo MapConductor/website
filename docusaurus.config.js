@@ -17,10 +17,13 @@ const config = {
   themes: ['@docusaurus/theme-mermaid'],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'ja'],
+    locales: ['en', 'ja', 'es-419'],
     localeConfigs: {
       ja: {
         label: '日本語'
+      },
+      'es-419': {
+        label: 'Español (Latinoamérica)'
       }
     }
   },

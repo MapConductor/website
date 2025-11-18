@@ -7,6 +7,7 @@
     "prebuild": "sass src/css/custom.scss src/css/custom.css",
     "start": "docusaurus start",
     "start:ja": "docusaurus start --locale ja",
+    "start:es": "docusaurus start --locale es-419",
     "scss:watch": "sass --watch src/css/custom.scss src/css/custom.css",
     "build": "docusaurus build",
     "serve": "docusaurus serve",

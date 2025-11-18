@@ -22,7 +22,7 @@ MapConductor is still in an early but active stage. Our short‑term priority is
 
 This project started as a personal effort based on real‑world experience building map apps, and is currently supported by the Mitou Advanced (未踏アドバンスト) program in Japan, operated by the Information‑technology Promotion Agency (IPA), a governmental organization.
 
-Looking ahead, we are applying to NLnet’s Mobifree programme to help grow MapConductor as a public, open‑source building block in the mobile ecosystem.
+Looking ahead, we are seeking acceptance into NLnet's Mobifree programme and as an official OSGeo Foundation project to enable long‑term development with contributors from around the world.
 
 Today, the Android SDK is already released and used in demo applications, with the next version planned soon. During the Mobifree funding period we plan to further stabilise the Android SDK and develop an iOS SDK (and, if possible, a Flutter SDK), including advanced features such as marker clustering and raster/vector tile rendering.
 
