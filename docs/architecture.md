@@ -11,7 +11,7 @@ For example, you can add a marker or draw a polygon through MapConductor, and Ma
 ## Core architecture
 
 ```mermaid
-flowchart LR
+flowchart TB
   subgraph App["Your app"]
     UI["UI & business logic"]
   end

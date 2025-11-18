@@ -11,7 +11,7 @@ Por ejemplo, puedes añadir un marcador o dibujar un polígono a través de MapC
 ## Arquitectura principal
 
 ```mermaid
-flowchart LR
+flowchart TB
   subgraph App["Your app"]
     UI["UI & business logic"]
   end

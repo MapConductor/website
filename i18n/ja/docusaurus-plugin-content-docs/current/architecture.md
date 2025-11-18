@@ -11,7 +11,7 @@ MapConductor はアプリケーションと各種地図 SDK の橋渡しを行�
 ## コアアーキテクチャ
 
 ```mermaid
-flowchart LR
+flowchart TB
   subgraph App["Your app"]
     UI["UI & business logic"]
   end
