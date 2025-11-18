@@ -46,6 +46,10 @@ From the developer’s point of view:
 - The **Core** layer handles common behavior such as shapes, events, and state.
 - The **Drivers** translate those common operations into each underlying provider’s SDK calls.
 
+## Scope of abstraction
+
+MapConductor does not try to wrap every single capability of each map SDK. Instead, it focuses on common operations such as showing a map, markers, and basic shapes, while still giving developers access to the underlying native map instances when they need provider‑specific features. This keeps the shared API simple and portable without sacrificing what makes each provider unique.
+
 ## Future cloud vision (abstract)
 
 In the long term, we also envision optional cloud components that can help with data synchronization, geofencing, and integration with external systems. These cloud‑side pieces are still in the design phase and not part of the current public SDK.

@@ -42,3 +42,10 @@ MapConductor comes from real‑world frustration with building and maintaining m
 
 This work is supported by the Mitou Advanced (未踏アドバンスト) program in Japan, a government‑backed initiative run by the Information‑technology Promotion Agency (IPA), a Japanese governmental organization. In the future, we plan to apply to NLnet’s Mobifree programme, because we share the same goal: making mobile ecosystems more open, more interoperable, and less dependent on single vendors.
 
+## Open source & license
+
+MapConductor’s Android SDK is developed as free and open‑source software under the Apache License 2.0. The source code is maintained at [github.com/MapConductor/android-sdk](https://github.com/MapConductor/android-sdk) and is currently being prepared for public release.
+
+## Reducing lock‑in and growing shared knowledge
+
+By standardizing a common set of basic map APIs across different SDKs while still exposing the underlying native map instances, MapConductor reduces vendor lock‑in without hiding provider‑specific capabilities. We expect a similar effect to SQL in the database world: just as SQL allows developers to move between MySQL, PostgreSQL, or SQLite and share libraries across engines, a shared map API can help communities around Google Maps, Mapbox, ArcGIS, HERE, and MapLibre learn from each other and reuse tools instead of being isolated.
