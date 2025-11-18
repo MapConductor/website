@@ -1,6 +1,111 @@
 import React, { useEffect } from 'react';
 import Root from '@theme-original/Root';
 import { useLocation } from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
+function getBasePath(pathname, locales, defaultLocale) {
+  if (!pathname) {
+    return '/';
+  }
+
+  const nonDefaultLocales = (locales || []).filter((locale) => locale !== defaultLocale);
+  let basePath = pathname;
+
+  nonDefaultLocales.forEach((locale) => {
+    const prefix = '/' + locale;
+
+    if (basePath === prefix || basePath === prefix + '/') {
+      basePath = '/';
+    } else if (basePath.startsWith(prefix + '/')) {
+      basePath = basePath.substring(prefix.length);
+      if (!basePath) {
+        basePath = '/';
+      }
+    }
+  });
+
+  return basePath || '/';
+}
+
+function getLocalePath(locale, basePath, defaultLocale) {
+  if (!basePath) {
+    basePath = '/';
+  }
+
+  if (locale === defaultLocale) {
+    return basePath;
+  }
+
+  if (basePath === '/') {
+    return '/' + locale + '/';
+  }
+
+  return '/' + locale + basePath;
+}
+
+function MobileLocaleGlobe() {
+  const { i18n } = useDocusaurusContext();
+  const location = useLocation();
+  const [open, setOpen] = React.useState(false);
+
+  if (!i18n || !i18n.locales || i18n.locales.length <= 1) {
+    return null;
+  }
+
+  const { locales, defaultLocale, currentLocale, localeConfigs } = i18n;
+  const basePath = getBasePath(location.pathname, locales, defaultLocale);
+
+  const localeLabels =
+    localeConfigs &&
+    Object.fromEntries(
+      Object.entries(localeConfigs).map(([locale, config]) => [locale, config.label || locale])
+    );
+
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
+
+  return (
+    <div className="locale-globe">
+      <button
+        type="button"
+        className="locale-globe__button"
+        aria-label="Change language"
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        onClick={() => setOpen((value) => !value)}
+      >
+        <span aria-hidden="true">🌐</span>
+      </button>
+      {open && (
+        <div className="locale-globe__dropdown" role="listbox">
+          {locales.map((locale) => {
+            const href = getLocalePath(locale, basePath, defaultLocale);
+            const isActive = locale === currentLocale;
+            const label =
+              (localeLabels && localeLabels[locale]) ||
+              locale.toUpperCase();
+
+            return (
+              <a
+                key={locale}
+                href={href}
+                className={
+                  'locale-globe__item' + (isActive ? ' locale-globe__item--active' : '')
+                }
+                role="option"
+                aria-selected={isActive}
+                onClick={() => setOpen(false)}
+              >
+                {label}
+              </a>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function RootWrapper(props) {
   const location = useLocation();
@@ -123,5 +228,10 @@ export default function RootWrapper(props) {
     };
   }, [location.pathname]);
 
-  return <Root {...props} />;
+  return (
+    <>
+      <MobileLocaleGlobe />
+      <Root {...props} />
+    </>
+  );
 }

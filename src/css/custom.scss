@@ -148,6 +148,7 @@ $primary: #0078d4;
       text-align: center;
       flex-grow: 1;
       margin: 10px auto;
+      color: black;
       -webkit-text-stroke: 1px #ffffffaa;
     }
 
@@ -192,4 +193,20 @@ $primary: #0078d4;
   .contents {
     margin: 1em;
   }
+}
+
+/* 地球儀ボタン周りの微調整 */
+.navbar__locale-globe-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+}
+
+/* ドロップダウンのボックスっぽい見た目 */
+.navbar__locale-globe-dropdown {
+  background: var(--ifm-navbar-background-color);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 4px 0;
 }
