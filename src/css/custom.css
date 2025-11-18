@@ -181,6 +181,7 @@
   right: 0.75rem;
   z-index: 1000;
 }
+
 .locale-globe__button {
   display: inline-flex;
   align-items: center;
@@ -194,10 +195,12 @@
   padding: 0;
   cursor: pointer;
 }
+
 .locale-globe__button:hover {
   background: var(--ifm-color-primary-lighter);
   color: #fff;
 }
+
 .locale-globe__dropdown {
   position: absolute;
   top: 2.5rem;
@@ -208,6 +211,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   padding: 0.25rem 0;
 }
+
 .locale-globe__item {
   display: block;
   padding: 0.4rem 0.75rem;
@@ -215,21 +219,23 @@
   color: var(--ifm-navbar-link-color);
   text-decoration: none;
 }
+
 .locale-globe__item:hover {
   background: var(--ifm-color-primary-lighter);
   color: #fff;
 }
+
 .locale-globe__item--active {
   font-weight: 600;
   background: var(--ifm-color-primary);
   color: #fff;
 }
+
 @media (min-width: 997px) {
   .locale-globe {
     display: none;
   }
 }
-
 /* デスクトップのナビバーのロケールドロップダウンを地球儀アイコンにする */
 .navbar__item--locale-dropdown .navbar__link {
   display: flex;
@@ -238,10 +244,12 @@
   padding: 4px 8px;
   font-size: 0;
 }
+
 .navbar__item--locale-dropdown .navbar__link::before {
   content: "🌐";
   font-size: 1.2rem;
 }
+
 .navbar__item--locale-dropdown .dropdown__menu {
   background: var(--ifm-navbar-background-color);
   border-radius: 4px;

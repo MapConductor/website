@@ -23,7 +23,7 @@ const LOCALE_CONTENT = {
       <>
         The project is aimed at general-purpose location-based applications and is built
         to be approachable even for developers who are new to Android or iOS.
-      </>
+      </>,
     ],
     buttons: {
       getStarted: 'Get started',
@@ -52,7 +52,7 @@ const LOCALE_CONTENT = {
       <>
         一般的な位置情報アプリケーション向けに設計されており、Android や iOS に不慣れな開発者でも、
         地図機能に取り組みやすくすることを目標としています。
-      </>
+      </>,
     ],
     buttons: {
       getStarted: '概要を見る',
@@ -81,7 +81,7 @@ const LOCALE_CONTENT = {
       <>
         El proyecto está pensado para aplicaciones de geolocalización de propósito general y
         busca ser accesible incluso para quienes se inician en el desarrollo para Android o iOS.
-      </>
+      </>,
     ],
     buttons: {
       getStarted: 'Empezar',
@@ -111,13 +111,6 @@ export default function Home() {
           </div>
         </div>
         <section className='contents'>
-          {/* <iframe width="100%" height="400" 
-            src="https://www.youtube-nocookie.com/embed/Sh2GAsM7Qe8?si=81JXhzNS85jzQl7R"
-            title="MapConductor Developer Interviews"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe> */}
           {content.paragraphs.map((para, index) => (
             <p key={index}>{para}</p>
           ))}
