@@ -20,11 +20,11 @@ MapConductor は、この摩擦を減らすために生まれました。開発�
 
 - **プラットフォーム**: Android（iOS など他プラットフォームは計画中で、まだ利用できません）
 - **対応している Android 向け地図 SDK**:
-  - Google Maps
-  - Mapbox
-  - ArcGIS Maps SDK
-  - HERE SDK
-  - MapLibre
+  - Maps SDK for Android(Google Maps Platform)
+  - Mapbox Maps SDK for Android
+  - ArcGIS Maps SDK for Kotlin
+  - HERE SDK for Android Explore
+  - MapLibre Native Android
 - **統一 API 経由で利用できる機能**:
   - 地図の表示
   - マーカーの追加
