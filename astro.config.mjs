@@ -6,6 +6,7 @@ import starlightMermaid from '@pasqal-io/starlight-client-mermaid';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://mapconductor.com',
+	outDir: 'dist',
 	integrations: [
 		starlight({
 			title: 'MapConductor',
