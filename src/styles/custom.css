@@ -375,6 +375,11 @@ body.sidebar-collapsed .sidebar-pane .sidebar-content {
   }
 }
 
+/* Hide h1 title on home page (handled by JavaScript) */
+h1#_top[style*="display: none"] {
+  display: none !important;
+}
+
 /* Hide right sidebar (table of contents) */
 .right-sidebar-container {
   display: none !important;

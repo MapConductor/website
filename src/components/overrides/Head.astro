@@ -188,6 +188,45 @@ import Default from '@astrojs/starlight/components/Head.astro';
   }
 </script>
 
+<!-- Hide h1 title on home page -->
+<script>
+  function hideHomePageTitle() {
+    const path = window.location.pathname;
+    console.log('Current path:', path);
+
+    // Check if we're on home page (including localized versions)
+    const isHomePage = path === '/' ||
+                       path === '/ja/' || path === '/ja' ||
+                       path === '/es-419/' || path === '/es-419';
+
+    console.log('Is home page:', isHomePage);
+
+    if (isHomePage) {
+      // Wait for DOM to be ready and find the h1 element
+      setTimeout(() => {
+        const h1 = document.querySelector('h1#_top');
+        console.log('Found h1 element:', h1);
+        if (h1) {
+          h1.style.display = 'none';
+          console.log('h1 hidden');
+        }
+      }, 100);
+    }
+  }
+
+  // Run on initial page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', hideHomePageTitle);
+  } else {
+    hideHomePageTitle();
+  }
+
+  // Re-apply on Astro page navigation
+  document.addEventListener('astro:page-load', () => {
+    hideHomePageTitle();
+  });
+</script>
+
 <!-- Sidebar Toggle Button -->
 <script>
   function initSidebarToggle() {
