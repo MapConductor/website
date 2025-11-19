@@ -1,0 +1,36 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import Hero from '../components/home/Hero.astro';
+
+const content = {
+  title: 'MapConductor',
+  description: 'A unified map SDK for mobile developers',
+  subtitle: 'A unified map SDK for mobile developers',
+  heroMessage: `Let's make your\nmap apps easier!`,
+  paragraphs: [
+    'MapConductor is an open-source SDK that lets you work with multiple map SDKs through a unified API. Instead of relearning each provider\'s API, you can focus on what matters: displaying your data on the map.',
+    'The project is aimed at general-purpose location-based applications and is built to be approachable even for developers who are new to Android or iOS.',
+  ],
+  buttons: {
+    getStarted: 'Get started',
+    developers: 'For developers'
+  }
+};
+---
+
+<StarlightPage frontmatter={{ title: content.title, description: content.description }}>
+  <Hero title={content.title} subtitle={content.subtitle} heroMessage={content.heroMessage} />
+
+  <div class="sl-markdown-content home-summary">
+    {content.paragraphs.map(para => <p>{para}</p>)}
+  </div>
+
+  <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+    <a class="sl-link-button" href="/intro" style="padding: 0.75rem 1.5rem; background: var(--sl-color-accent); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">
+      {content.buttons.getStarted}
+    </a>
+    <a class="sl-link-button" href="/developers" style="padding: 0.75rem 1.5rem; background: transparent; color: var(--sl-color-accent); text-decoration: none; border-radius: 0.5rem; border: 2px solid var(--sl-color-accent); font-weight: 600;">
+      {content.buttons.developers}
+    </a>
+  </div>
+</StarlightPage>

@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(npm run build:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(find:*)",
+      "Bash(npm create:*)",
+      "Bash(npm install)",
+      "Bash(npm view:*)",
+      "Bash(npm search:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
