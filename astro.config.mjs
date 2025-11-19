@@ -55,13 +55,13 @@ export default defineConfig({
 						flowchart: {
 							htmlLabels: true,
 							curve: 'basis',
-							padding: 20,
+							padding: 10,
 						},
 						sequence: {
 							htmlLabels: true,
-							diagramMarginX: 20,
-							diagramMarginY: 20,
-							boxMargin: 20,
+							diagramMarginX: 10,
+							diagramMarginY: 10,
+							boxMargin: 10,
 							messageMargin: 50,
 							actorFontSize: 16,
 							noteFontSize: 16,

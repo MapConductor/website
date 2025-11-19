@@ -8,7 +8,9 @@
       "Bash(npm install)",
       "Bash(npm view:*)",
       "Bash(npm search:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "WebFetch(domain:localhost)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []

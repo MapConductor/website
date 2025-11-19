@@ -9,6 +9,7 @@ const { title, subtitle, heroMessage } = Astro.props;
 ---
 
 <div class="welcome">
+  <div class="backdrop"></div>
   <div class="caption">
     <h1>{title}</h1>
     <h2>{subtitle}</h2>
@@ -35,6 +36,21 @@ const { title, subtitle, heroMessage } = Astro.props;
     flex-direction: row;
     margin-bottom: 2rem;
   }
+  .welcome .backdrop {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: auto;
+    height: auto;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .welcome .backdrop {
+      background-color: #0008;
+    }
+  }
 
   .caption {
     width: 300px;
@@ -43,6 +59,7 @@ const { title, subtitle, heroMessage } = Astro.props;
     flex-grow: 1;
     margin: 10px auto;
     color: black;
+    z-index: 2;
   }
 
   .mapcat {
@@ -50,6 +67,7 @@ const { title, subtitle, heroMessage } = Astro.props;
     height: 300px;
     width: 300px;
     margin: auto;
+    z-index: 2;
   }
 
   #mapcat_image {

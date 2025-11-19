@@ -12,17 +12,17 @@ MapConductor はアプリケーションと各種地図 SDK の橋渡しを行�
 
 ```mermaid
 flowchart TB
-  subgraph App["Your app"]
-    UI["UI & business logic"]
+  subgraph App["アプリ"]
+    UI["UIとビジネスロジック"]
   end
 
   subgraph MC["MapConductor SDK (Android)"]
-    API["Unified Map API"]
-    Core["Core features<br/>(map, markers, shapes, events)"]
-    Drivers["Map SDK drivers"]
+    API["統一された地図API"]
+    Core["コア機能<br/>(map, markers, shapes, events)"]
+    Drivers["各地図SDKドライバー"]
   end
 
-  subgraph Providers["Map SDK providers"]
+  subgraph Providers["地図SDKプロバイダー"]
     GMaps["Google Maps"]
     Mapbox["Mapbox"]
     ArcGIS["ArcGIS Maps SDK"]
@@ -42,7 +42,7 @@ flowchart TB
 
 開発者の視点からは、次のように理解できます。
 
-- 地図関連のコードは、すべて **統一 Map API（Unified Map API）** に対して記述します。
+- 地図関連のコードは、すべて **統一された地図 API（Unified Map API）** に対して記述します。
 - **Core** レイヤーが、図形やイベント、状態管理などの共通処理を担当します。
 - **Drivers** が、それらの共通操作を各プロバイダの SDK 呼び出しに変換します。
 
