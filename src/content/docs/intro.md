@@ -1,51 +1,78 @@
 ---
 id: intro
-title: MapConductor – Overview
+title: MapConductor Overview
 sidebar_label: Overview
 ---
 
-MapConductor is an open‑source SDK that lets you control multiple Android map SDKs through a single, easy‑to‑learn API. Instead of rewriting your app whenever you change map providers, you focus on your app — not on each vendor’s quirks.
 
 ## What is MapConductor?
 
-Building a map‑based mobile app sounds simple at first: show a map, add a few pins, maybe draw a route. In reality, developers quickly run into a wall of complexity. Every map SDK has its own API, its own edge cases, and its own platform‑specific differences. When your app needs to run on Android and iOS, or when you want to switch from one provider to another, you often end up rewriting the same logic again and again.
+There are many map SDKs in the world, such as Google Maps, ArcGIS, Mapbox, MapLibre, and HERE.
+When you're assigned a different SDK than the one you're used to, you have to relearn all the API names and lifecycles.
+Even though you're just doing simple tasks like "placing pins" or "drawing routes," you have to rewrite code because the syntax and design philosophies are different.
+Furthermore, the behavior and samples differ slightly between Android and iOS, and you can spend an entire day just investigating the causes — have you ever experienced this?
 
-MapConductor was created to reduce this friction. From the perspective of a developer, you get a single, consistent API for common map features. Under the hood, MapConductor takes care of talking to each vendor’s Android SDK. You can start with one map provider and keep the option to switch later, without throwing away your code.
+With MapConductor, you can handle multiple map SDKs through a unified common API.
+You don't need to know the detailed API usage of each map SDK.
+You can focus on what you really want to do: how to express your data on the map.
 
-The project is aimed at general‑purpose location‑based applications. Whether you are building a delivery app, a field‑worker tool, or a niche visualization app, we want basic map operations to feel approachable, even for developers who are new to Android or iOS.
+![Operating actual map SDKs through an abstracted API that unifies multiple map SDKs](/img/concept.png)
 
-## Current capabilities
+## Current Status
 
-At the moment, MapConductor focuses on the Android platform.
+Currently, we are developing for Jetpack Compose for Android apps. Other platforms such as iOS and Flutter are planned but not yet available.
 
-- **Platform**: Android (iOS and other platforms are planned, but not available yet).
 - **Supported Android map SDKs**:
-  - Google Maps
-  - Mapbox
-  - ArcGIS Maps SDK
-  - HERE SDK
-  - MapLibre
-- **Supported features through the unified API**:
-  - Displaying a map
+  - Maps SDK for Android (Google Maps Platform)
+  - Mapbox Maps SDK for Android
+  - ArcGIS Maps SDK for Kotlin
+  - HERE SDK for Android Explore
+  - MapLibre Native Android
+
+|                 | Google Maps | Mapbox   | Here     | ArcGIS   | MapLibre |
+|-----------------|-------------|----------|----------|----------|----------|
+| Map             | &#x2611;    | &#x2611; | &#x2611; | &#x2611; | &#x2611; |
+| Marker          | &#x2611;    | &#x2611; | &#x2611; | &#x2611; | &#x2611; |
+| Circle          | &#x2611;    | &#x2611; | &#x2611; | &#x2611; | &#x2611; |
+| Polyline        | &#x2611;    | &#x2611; | &#x2611; | &#x2611; | &#x2611; |
+| Polygon         | &#x2611;    | &#x2611; | &#x2611; | &#x2611; | &#x2611; |
+| GroundImage     | &#x2611;    | N/A      | N/A      | N/A      | N/A      |
+| RasterTileLayer | &#x2610;    | &#x2610; | &#x2610; | &#x2610; | &#x2610; |
+| VectorTileLayer | &#x2610;    | &#x2610; | &#x2610; | &#x2610; | &#x2610; |
+
+- **Features available through the unified API**:
+  - Displaying maps
   - Adding markers
   - Drawing polylines and polygons
-  - Adding circles
-  - Adding ground images (currently supported on Google Maps only)
+  - Drawing circles
+  - Adding ground images (currently only supported on Google Maps)
 
-## Why this project exists
+## What MapConductor Aims For
 
-MapConductor comes from real‑world frustration with building and maintaining map apps across different SDKs and platforms. The goal is to:
+The goal of MapConductor is to "make it possible to switch map SDKs as easily as changing clothes."
+In other words, to allow developers and businesses to freely choose map SDKs according to their purposes.
 
-- Make it easier to get started with map development on Android.
-- Reduce the cost of switching between map providers.
-- Encourage a healthier, more open ecosystem for map SDKs.
+Previously, once you incorporated a map SDK into your app, replacing it later meant starting from scratch.
+By standardizing the way map SDKs are handled, it becomes possible to replace them with minimal code modifications.
 
-This work is supported by the Mitou Advanced (未踏アドバンスト) program in Japan, a government‑backed initiative run by the Information‑technology Promotion Agency (IPA), a Japanese governmental organization. In the future, we plan to apply to NLnet’s Mobifree programme, because we share the same goal: making mobile ecosystems more open, more interoperable, and less dependent on single vendors.
+- "I feel like I'm fighting with SDK differences more than the map itself"
+- "I gave up because it didn't support Jetpack Compose"
+- "That SDK costs less than half, but we don't have engineers who can develop with it"
 
-## Open source & license
+By standardizing map SDK handling, you can say goodbye to these struggles.
 
-MapConductor’s Android SDK is developed as free and open‑source software under the Apache License 2.0. The source code is maintained at [github.com/MapConductor/android-sdk](https://github.com/MapConductor/android-sdk) and is currently being prepared for public release.
+![We want to make it possible to freely choose map SDKs](/img/change-map-sdks.jpg)
 
-## Reducing lock‑in and growing shared knowledge
+## Reducing Lock-in and Promoting Knowledge Sharing
 
-By standardizing a common set of basic map APIs across different SDKs while still exposing the underlying native map instances, MapConductor reduces vendor lock‑in without hiding provider‑specific capabilities. We expect a similar effect to SQL in the database world: just as SQL allows developers to move between MySQL, PostgreSQL, or SQLite and share libraries across engines, a shared map API can help communities around Google Maps, Mapbox, ArcGIS, HERE, and MapLibre learn from each other and reuse tools instead of being isolated.
+MapConductor reduces vendor lock-in while still allowing you to leverage provider-specific features by standardizing basic map APIs common to each SDK while providing direct access to native map instances when needed.
+
+This concept is similar to SQL in the database world. Even with different database implementations like MySQL, PostgreSQL, and SQLite, the common language of SQL allows developers to approach each engine relatively easily and share libraries. Similarly, we aim to enable communities around Google Maps, Mapbox, ArcGIS, HERE, MapLibre, and others to learn from each other and share tools and knowledge through a common map API.
+
+## Support Programs
+
+This project is supported by the "Mitou Advanced" government support program operated by the Information-technology Promotion Agency (IPA), an independent administrative institution in Japan. In the future, we plan to apply to NLnet's Mobifree program, which shares the common goal of making mobile ecosystems more open and interoperable while reducing dependence on single vendors, and to the OSGeo Foundation's Incubation program, which supports GIS software and platforms.
+
+## Open Source and License
+
+MapConductor's Android SDK is developed as free and open-source software under the Apache License 2.0. The source code is maintained at [github.com/MapConductor/android-sdk](https://github.com/MapConductor/android-sdk) and is currently being prepared for public release.

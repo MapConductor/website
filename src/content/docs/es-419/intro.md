@@ -1,54 +1,78 @@
 ---
 id: intro
-title: MapConductor – Descripción general
+title: MapConductor Descripción general
 sidebar_label: Descripción general
 ---
 
-MapConductor es un SDK de código abierto que permite controlar varios SDK de mapas para Android a través de una única API sencilla. En lugar de reescribir tu app cada vez que cambias de proveedor de mapas, puedes centrarte en la experiencia de tu aplicación, no en las particularidades de cada proveedor.
 
 ## ¿Qué es MapConductor?
 
-A primera vista, crear una app móvil basada en mapas parece sencillo: mostrar un mapa, añadir algunos marcadores y quizá dibujar una ruta. En la práctica, los desarrolladores se encuentran rápidamente con una gran complejidad. Cada SDK de mapas tiene su propia API, sus casos límite y sus diferencias entre plataformas. Cuando tu app tiene que funcionar en Android e iOS, o cuando quieres cambiar de un proveedor a otro, terminas reescribiendo la misma lógica una y otra vez.
+En el mundo existen muchos SDK de mapas, como Google Maps, ArcGIS, Mapbox, MapLibre y HERE.
+Cuando te asignan un SDK diferente al que estás acostumbrado, tienes que reaprender todos los nombres de las API y los ciclos de vida.
+Aunque solo estés haciendo tareas simples como "colocar marcadores" o "dibujar rutas", tienes que reescribir el código porque la sintaxis y las filosofías de diseño son diferentes.
+Además, el comportamiento y los ejemplos difieren ligeramente entre Android e iOS, y puedes pasar un día entero solo investigando las causas. ¿Has experimentado esto alguna vez?
 
-MapConductor nace para reducir esa fricción. Desde el punto de vista de la persona desarrolladora, obtienes una API coherente para las funciones de mapas más habituales. Por debajo, MapConductor se encarga de hablar con los SDK de Android de cada proveedor. Puedes comenzar con un proveedor de mapas y mantener abierta la opción de cambiar más adelante sin descartar tu código.
+Con MapConductor, puedes manejar múltiples SDK de mapas a través de una API común unificada.
+No necesitas conocer el uso detallado de la API de cada SDK de mapas.
+Puedes concentrarte en lo que realmente quieres hacer: cómo expresar tus datos en el mapa.
 
-El proyecto está pensado para aplicaciones de geolocalización de propósito general. Tanto si estás construyendo una app de entregas, una herramienta para trabajo de campo o una aplicación de visualización especializada, queremos que las operaciones básicas del mapa resulten accesibles incluso para quienes se inician en el desarrollo para Android o iOS.
+![Operar los SDK de mapas reales a través de una API abstraída que unifica múltiples SDK de mapas](/img/concept.png)
 
-## Capacidades actuales
+## Estado actual
 
-Por ahora, MapConductor se centra en la plataforma Android.
+Actualmente, estamos desarrollando para Jetpack Compose para aplicaciones Android. Otras plataformas como iOS y Flutter están planificadas pero aún no están disponibles.
 
-- **Plataforma**: Android (iOS y otras plataformas están previstas, pero aún no están disponibles).
 - **SDK de mapas para Android compatibles**:
-  - Google Maps
-  - Mapbox
-  - ArcGIS Maps SDK
-  - HERE SDK
-  - MapLibre
+  - Maps SDK for Android (Google Maps Platform)
+  - Mapbox Maps SDK for Android
+  - ArcGIS Maps SDK for Kotlin
+  - HERE SDK for Android Explore
+  - MapLibre Native Android
+
+|                 | Google Maps | Mapbox   | Here     | ArcGIS   | MapLibre |
+|-----------------|-------------|----------|----------|----------|----------|
+| Map             | &#x2611;    | &#x2611; | &#x2611; | &#x2611; | &#x2611; |
+| Marker          | &#x2611;    | &#x2611; | &#x2611; | &#x2611; | &#x2611; |
+| Circle          | &#x2611;    | &#x2611; | &#x2611; | &#x2611; | &#x2611; |
+| Polyline        | &#x2611;    | &#x2611; | &#x2611; | &#x2611; | &#x2611; |
+| Polygon         | &#x2611;    | &#x2611; | &#x2611; | &#x2611; | &#x2611; |
+| GroundImage     | &#x2611;    | N/A      | N/A      | N/A      | N/A      |
+| RasterTileLayer | &#x2610;    | &#x2610; | &#x2610; | &#x2610; | &#x2610; |
+| VectorTileLayer | &#x2610;    | &#x2610; | &#x2610; | &#x2610; | &#x2610; |
+
 - **Funciones disponibles a través de la API unificada**:
-  - Mostrar un mapa
+  - Mostrar mapas
   - Añadir marcadores
   - Dibujar polilíneas y polígonos
   - Dibujar círculos
-  - Añadir imágenes de fondo (actualmente solo en Google Maps)
+  - Añadir imágenes de fondo (actualmente solo compatible con Google Maps)
 
-## Por qué existe este proyecto
+## Lo que MapConductor busca lograr
 
-MapConductor surge de la experiencia real de construir y mantener apps de mapas en distintos SDK y plataformas. Sus objetivos son:
+El objetivo de MapConductor es "hacer posible cambiar de SDK de mapas tan fácilmente como cambiar de ropa".
+En otras palabras, permitir que los desarrolladores y las empresas elijan libremente los SDK de mapas según sus propósitos.
 
-- Facilitar el inicio en el desarrollo de mapas en Android.
-- Reducir el coste de cambiar entre proveedores de mapas.
-- Impulsar un ecosistema de SDK de mapas más abierto y saludable.
+Anteriormente, una vez que incorporabas un SDK de mapas en tu aplicación, reemplazarlo más tarde significaba empezar desde cero.
+Al estandarizar la forma en que se manejan los SDK de mapas, se hace posible reemplazarlos con modificaciones mínimas de código.
 
-Este trabajo cuenta con el apoyo del programa Mitou Advanced (未踏アドバンスト) en Japón, una iniciativa respaldada por el gobierno y gestionada por la Information-technology Promotion Agency (IPA). En el futuro, planeamos solicitar el apoyo del programa Mobifree de NLnet, porque compartimos el mismo objetivo: hacer que los ecosistemas móviles sean más abiertos, interoperables y menos dependientes de un único proveedor.
+- "Siento que estoy luchando más con las diferencias de SDK que con el mapa en sí"
+- "Renuncié porque no soportaba Jetpack Compose"
+- "Ese SDK cuesta menos de la mitad, pero no tenemos ingenieros que puedan desarrollar con él"
 
-## Software libre y licencia
+Al estandarizar el manejo de SDK de mapas, puedes despedirte de estas dificultades.
 
-El SDK de Android de MapConductor se desarrolla como software libre y de código abierto bajo la licencia Apache 2.0. El código fuente se mantiene en [github.com/MapConductor/android-sdk](https://github.com/MapConductor/android-sdk) y actualmente se está preparando para su publicación.
+![Queremos hacer posible elegir libremente los SDK de mapas](/img/change-map-sdks.jpg)
 
-## Reducir el bloqueo de proveedor y compartir conocimiento
+## Reducir el bloqueo de proveedor y promover el intercambio de conocimientos
 
-Al estandarizar un conjunto común de APIs básicas de mapas entre distintos SDK, y al mismo tiempo mantener el acceso a las instancias nativas del mapa cuando se necesitan funciones específicas de cada proveedor, MapConductor reduce el bloqueo de proveedor sin ocultar las capacidades propias de cada plataforma.
+MapConductor reduce el bloqueo de proveedor mientras aún te permite aprovechar las funciones específicas del proveedor mediante la estandarización de las API de mapas básicas comunes a cada SDK, al tiempo que proporciona acceso directo a instancias de mapas nativas cuando sea necesario.
 
-Esperamos un efecto similar al de SQL en el mundo de las bases de datos: así como SQL permite a las personas desarrolladoras moverse entre MySQL, PostgreSQL o SQLite y compartir librerías entre motores, una API de mapas compartida puede ayudar a que las comunidades de Google Maps, Mapbox, ArcGIS, HERE y MapLibre aprendan unas de otras y reutilicen herramientas en lugar de permanecer aisladas.
+Este concepto es similar a SQL en el mundo de las bases de datos. Incluso con diferentes implementaciones de bases de datos como MySQL, PostgreSQL y SQLite, el lenguaje común de SQL permite a los desarrolladores abordar cada motor con relativa facilidad y compartir bibliotecas. De manera similar, nuestro objetivo es permitir que las comunidades alrededor de Google Maps, Mapbox, ArcGIS, HERE, MapLibre y otros aprendan unos de otros y compartan herramientas y conocimientos a través de una API de mapas común.
 
+## Programas de apoyo
+
+Este proyecto cuenta con el apoyo del programa de apoyo gubernamental "Mitou Advanced" operado por la Agencia de Promoción de Tecnologías de la Información (IPA), una institución administrativa independiente de Japón. En el futuro, planeamos solicitar el programa Mobifree de NLnet, que comparte el objetivo común de hacer que los ecosistemas móviles sean más abiertos e interoperables mientras se reduce la dependencia de proveedores únicos, y al programa de Incubación de la Fundación OSGeo, que apoya software y plataformas GIS.
+
+## Código abierto y licencia
+
+El SDK de Android de MapConductor se desarrolla como software libre y de código abierto bajo la licencia Apache 2.0. El código fuente se mantiene en [github.com/MapConductor/android-sdk](https://github.com/MapConductor/android-sdk) y actualmente se está preparando para su lanzamiento público.

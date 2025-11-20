@@ -29,7 +29,7 @@ MapCondutor（マップコンダクター）なら、複数の地図SDKを統一
   - HERE SDK for Android Explore
   - MapLibre Native Android
 
-|                 | Google Maps | Mapbox   | Here     | ArcGIS   | ArcGIS   |
+|                 | Google Maps | Mapbox   | Here     | ArcGIS   | MapLibre |
 |-----------------|-------------|----------|----------|----------|----------|
 | Map             | &#x2611;    | &#x2611; | &#x2611; | &#x2611; | &#x2611; |
 | Marker          | &#x2611;    | &#x2611; | &#x2611; | &#x2611; | &#x2611; |
