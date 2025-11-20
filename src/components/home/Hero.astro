@@ -12,7 +12,7 @@ const { title, subtitle, heroMessage } = Astro.props;
   <div class="backdrop"></div>
   <div class="caption">
     <h1>{title}</h1>
-    <h2>{subtitle}</h2>
+    <h2 set:html={subtitle.split('\n').join('<br />')}/>
   </div>
   <div class="mapcat">
     <img src="/img/welcome.png" id="mapcat_image" alt="MapCat mascot" />

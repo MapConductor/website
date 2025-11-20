@@ -16,34 +16,65 @@ MapConductor está diseñado para ser amigable con quienes se inician en el desa
   - HERE SDK
   - MapLibre
 - **Funciones disponibles a través de la API unificada**:
-  - Mostrar un mapa
+  - Mostrar mapas
   - Añadir marcadores
   - Dibujar polilíneas y polígonos
   - Dibujar círculos
   - Añadir imágenes de fondo (actualmente solo en Google Maps)
 
-## Uso a alto nivel (conceptual)
+## Ejemplo de uso de alto nivel
 
-El siguiente ejemplo utiliza nombres ilustrativos para mostrar cómo podría verse MapConductor en la práctica. Consulta la documentación específica del SDK de MapConductor para ver la API real y los pasos de instalación.
+El siguiente es un código de muestra simple para MapConductor. Para obtener detalles completos de la API e instrucciones de instalación, consulta el sitio de documentación del SDK de MapConductor por separado.
 
 ```kotlin
-// 1. Configurar el proveedor de mapas que quieres utilizar
-val config = MapConductorConfig(
-    provider = MapProvider.GoogleMaps // o Mapbox, ArcGIS, HERE, MapLibre
-)
+// State del SDK de mapas que deseas usar
+// Google Maps → rememberGoogleMapViewState
+// Mapbox → rememberMapboxViewState
+val state =
+    rememberMapLibreMapViewState(
+        cameraPosition =
+            MapCameraPositionImpl(
+                position = GeoPointImpl.fromLatLong(21.324513, -157.925074),
+                zoom = 5.0,
+            ),
+    )
+// Marcador
+val markerState =
+    remember {
+        MarkerState(
+            position = GeoPointImpl.fromLatLong(21.324513, -157.925074),
+            draggable = true,
+        )
+    }
 
-// 2. Crear y mostrar un mapa a través de MapConductor
-val map = MapConductorMapView(context, config)
+// Círculo
+val circleState =
+    remember {
+        CircleState(
+            id = "demo-circle",
+            center = markerState.position,
+            radiusMeters = 5000.0,
+            strokeColor = Color.Magenta,
+            strokeWidth = 2.dp,
+            fillColor = Color.Cyan.copy(alpha = 0.3f),
+            geodesic = true,
+        )
+    }
 
-// 3. Usar la API unificada para añadir contenido
-map.addMarker(latitude = 35.0, longitude = 139.0, title = "Hello Map")
-map.addPolyline(points = listOf(/* ... */))
-map.addCircle(center = /* ... */, radiusMeters = 200.0)
+// Mostrar el mapa
+// Google Maps → GoogleMapViewState
+// Mapbox → MapBoxViewState
+MapLibreMapView(
+    modifier = modifier,
+    state = state,
+    onMarkerDrag = { draggedState ->
+        // Cuando se arrastra el marcador, mover el centro del círculo
+        circleState.center = draggedState.position
+    },
+) {
+    Marker(markerState)
+    Circle(circleState)
+}
 ```
 
-En lugar de llamar a cada SDK directamente, escribes la lógica del mapa contra la API de MapConductor. Si más adelante decides cambiar de proveedor, solo tienes que ajustar la configuración en lugar de reescribir toda la base de código.
-
-## Dónde encontrar documentación detallada
-
-Los pasos de instalación, la referencia completa de la API y ejemplos más completos estarán disponibles en un sitio de documentación separado para el SDK de MapConductor. Esta página se centra en el concepto y la dirección del proyecto más que en los detalles de implementación de bajo nivel.
-
+![Ejemplo de MapConductor](/img/example.gif)

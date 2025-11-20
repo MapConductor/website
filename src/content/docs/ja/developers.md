@@ -24,26 +24,57 @@ MapConductor は、Android 向け地図開発に不慣れな開発者にも扱�
 
 ## 使い方の概要（ハイレベルな例）
 
-以下は、MapConductor を使ったときの雰囲気を示す概念的なサンプルコードです。実際の API やインストール手順については、別途用意する MapConductor SDK ドキュメントサイトを参照してください。
+以下は、MapConductor（マップコンダクター）の簡単なサンプルコードです。実際の API やインストール手順については、別途用意する MapConductor SDK ドキュメントサイトを参照してください。
 
 ```kotlin
-// 1. 利用する地図プロバイダを設定
-val config = MapConductorConfig(
-    provider = MapProvider.GoogleMaps // or Mapbox, ArcGIS, HERE, MapLibre
-)
+// 使用する地図SDKのstate
+// Google Maps → rememberGoogleMapViewState
+// Mapbox → rememberMapboxViewState
+val state =
+    rememberMapLibreMapViewState(
+        cameraPosition =
+            MapCameraPositionImpl(
+                position = GeoPointImpl.fromLatLong(21.324513, -157.925074),
+                zoom = 5.0,
+            ),
+    )
+// マーカー
+val markerState =
+    remember {
+        MarkerState(
+            position = GeoPointImpl.fromLatLong(21.324513, -157.925074),
+            draggable = true,
+        )
+    }
 
-// 2. MapConductor 経由で地図を生成して表示
-val map = MapConductorMapView(context, config)
+// 円
+val circleState =
+    remember {
+        CircleState(
+            id = "demo-circle",
+            center = markerState.position,
+            radiusMeters = 5000.0,
+            strokeColor = Color.Magenta,
+            strokeWidth = 2.dp,
+            fillColor = Color.Cyan.copy(alpha = 0.3f),
+            geodesic = true,
+        )
+    }
 
-// 3. 統一 API を使って地図上に要素を追加
-map.addMarker(latitude = 35.0, longitude = 139.0, title = "Hello Map")
-map.addPolyline(points = listOf(/* ... */))
-map.addCircle(center = /* ... */, radiusMeters = 200.0)
+// 地図の表示
+// Google Maps → GoogleMapViewState
+// Mapbox → MapBoxViewState
+MapLibreMapView(
+    modifier = modifier,
+    state = state,
+    onMarkerDrag = { draggedState ->
+        // マーカーがドラッグされたら、円の中心を移動
+        circleState.center = draggedState.position
+    },
+) {
+    Marker(markerState)
+    Circle(circleState)
+}
 ```
 
-各 SDK を個別に直接呼び出す代わりに、MapConductor の API に対して地図ロジックを書きます。将来プロバイダを切り替えたい場合も、設定を変更するだけで済み、コードベース全体を書き換える必要はありません。
-
-## 詳細ドキュメントの所在
-
-インストール手順、完全な API リファレンス、より実践的なサンプルコードは、別途公開予定の MapConductor SDK ドキュメントサイトで提供します。このページでは、個々のメソッドの詳細よりも、プロジェクトのコンセプトと方向性に焦点を当てています。
-
+![MapConductorの例](/img/example.gif)
