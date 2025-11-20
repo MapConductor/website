@@ -22,7 +22,7 @@ MapConductor está diseñado para ser amigable con quienes se inician en el desa
   - Dibujar círculos
   - Añadir imágenes de fondo (actualmente solo en Google Maps)
 
-## Ejemplo de uso de alto nivel
+## Ejemplo de uso
 
 El siguiente es un código de muestra simple para MapConductor. Para obtener detalles completos de la API e instrucciones de instalación, consulta el sitio de documentación del SDK de MapConductor por separado.
 

@@ -22,7 +22,7 @@ MapConductor is designed to be friendly to developers who are new to Android map
   - Drawing circles
   - Adding ground images (currently supported on Google Maps only)
 
-## High-Level Usage Example
+## Usage Example
 
 The following is a simple sample code for MapConductor. For actual API details and installation instructions, please refer to the separate MapConductor SDK documentation site.
 
