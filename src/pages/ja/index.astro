@@ -2,94 +2,114 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import Hero from '../../components/home/Hero.astro';
 import { YouTube } from 'astro-embed';
+import { Code } from '@astrojs/starlight/components';
+
+const code = `MapView(
+    onMapClick = {
+      // onMapClickAction
+    }
+) {
+    for (markerState in markerList) {
+        Marker(state = markerState)
+    }
+}`;
 
 const content = {
   title: 'MapConductor',
-  description: 'モバイルアプリ開発者のための統一された地図SDK',
-  subtitle: 'モバイルアプリ開発者のための\n統一された地図SDK',
-  heroMessage: '地図アプリを\nもっと簡単に\n作れるようにしよう',
-  paragraphs: [
-    '',
-    '',
-  ],
-  paragraphs2Title: 'プロだって全部知ってるわけじゃないです...',
-  paragraphs2: [
-    'MapConductor は、複数の地図 SDK を統一された API で扱えるオープンソース SDK です。地図プロバイダごとに API の使い方を学び直す必要がなく、地図上のデータ表示という本来やりたいことに集中できます。',
-    '一般的な位置情報アプリケーション向けに設計されており、Android や iOS に不慣れな開発者でも、地図機能に取り組みやすくすることを目標としています。',
-  ],
+  description: '一度書くだけで、あらゆる地図SDKで動く。',
+  subtitle: 'すべての地図SDKに対応する統一API',
+  heroMessage: `地図コードの\n書き直しを\nやめよう。`,
   buttons: {
-    getStarted: '概要を見る',
-    developers: '開発者向け情報'
+    getStarted: 'はじめる',
+    developers: 'ドキュメントを見る'
   }
 };
 ---
 
 <StarlightPage frontmatter={{ title: content.title, description: content.description }}>
-  <Hero title={content.title} subtitle={content.subtitle} heroMessage={content.heroMessage} />
 
+  <Hero
+    title={content.title}
+    subtitle={content.subtitle}
+    heroMessage={content.heroMessage}
+  />
+
+  <!-- 価値提案 -->
   <div class="sl-markdown-content home-summary">
-    <p>MapConductor (マップコンダクター) は、乱立する地図SDKの差異を吸収し、開発の複雑さを解消します。
-      各地図SDKのAPIの細かい実装方法に気を配ることなく、地図の上にどのようにデータを表示したいのか、というビジネスロジックに集中して開発をすることができます。
-      そう、サポートする地図SDKなら、どれでも同じように扱える。まるでオーケストラの指揮者のように、複数の地図SDKを扱える。それがMapConductor (マップコンダクター) が目指す世界です。</p>
+
+  <p><strong>一度書くだけ。あらゆる地図SDKで動く。</strong></p>
+
+  <p>
+  MapConductorは、モバイル開発者のためのオープンソース統一地図SDKです。
+  Google Maps、Mapbox、HERE、ArcGISなど、すべて一つの統一されたAPIで利用できます。
+  地図体験の構築に集中しましょう。インテグレーションコードの書き直しは不要です。
+  </p>
+
   </div>
-  
-  <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
-    <a class="sl-link-button" href="/ja/intro" style="padding: 0.75rem 1.5rem; background: var(--sl-color-accent); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">
+
+  <!-- CTA -->
+  <div style="display:flex; gap:1rem; margin-top:2rem; flex-wrap:wrap;">
+    <a class="sl-link-button"
+       href="/ja/intro"
+       style="padding:0.75rem 1.5rem; background:var(--sl-color-accent); color:white; border-radius:0.5rem; font-weight:600;">
       {content.buttons.getStarted}
     </a>
-    <a class="sl-link-button" href="https://docs-android.mapconductor.com/ja/" style="padding: 0.75rem 1.5rem; background: transparent; color: var(--sl-color-accent); text-decoration: none; border-radius: 0.5rem; border: 2px solid var(--sl-color-accent); font-weight: 600;">
+
+    <a class="sl-link-button"
+       href="https://docs-android.mapconductor.com/ja/"
+       style="padding:0.75rem 1.5rem; background:transparent; color:var(--sl-color-accent); border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:600;">
       {content.buttons.developers}
     </a>
   </div>
 
-  <h2>プロモーションビデオ</h2>
-  <YouTube id="https://youtu.be/Sh2GAsM7Qe8" 
-  title="MapConductorの紹介" />
 
-  
+  <!-- メリット -->
   <div class="sl-markdown-content home-summary">
-    <h2>主な特徴</h2>
-    <ul dir="auto">
-      <li>
-        <p dir="auto"><strong>マルチSDK対応:</strong></p>
-        <ul dir="auto">
-          <li>単一のコードで、Google Maps, Mapbox, Here, ArcGISなど、複数の主要な地図SDKを操作できます。</li>
-          <li>将来的には50以上のSDKへの対応を目指しています。</li>
-        </ul>
-      </li>
-      <li>
-        <p dir="auto"><strong>共通API:</strong></p>
-        <ul dir="auto">
-          <li>MapConductorが提供する統一されたメソッドを使うだけで、地図の表示、操作、データプロットが可能です。</li>
-          <li>SDKごとの細かい「お作法」を学ぶ必要はもうありません。</li>
-        </ul>
-      </li>
-      <li>
-        <p dir="auto"><strong>(Android) Jetpack Composeへの対応:</strong></p>
-        <ul dir="auto">
-          <li>Android SDKはJetpack Composeで使うことを前提に設計されています。</li>
-          <li>地図の部分だけXML Layoutでコードを書く必要はありません。</li>
-        </ul>
-      </li>
-      <li>
-        <p dir="auto"><strong>ベンダーロックインからの解放:</strong></p>
-        <ul dir="auto">
-          <li>プロジェクトの要件に合わせて、最小限のコード修正でバックエンドの地図サービスを自由に乗り換えられます。</li>
-        </ul>
-      </li>
-      <li>
-        <p dir="auto"><strong>高パフォーマンス:</strong></p>
-        <ul dir="auto">
-          <li>数千個のマーカーをスムーズに扱えるようなアルゴリズムを標準的に実装しています</li>
-        </ul>
-      </li>
+    <h2>なぜMapConductorなのか？</h2>
+
+    <ul>
+      <li><strong>1つのAPI、複数の地図プロバイダ</strong> — SDKごとの書き直し不要</li>
+      <li><strong>いつでもプロバイダを切り替え可能</strong> — ベンダーロックインなし</li>
+      <li><strong>モダンなモバイルUI向けに設計</strong>（Jetpack Compose & SwiftUI）</li>
     </ul>
   </div>
 
-  <YouTube id="https://youtu.be/uGjpXKX0a4w"  title="Androidデモンストレーション" />
 
-  <h3>Related:</h3>
-  <a href="https://orynth.dev/projects/mapconductor" target="_blank" rel="noopener">
-    <img src="https://orynth.dev/api/badge/mapconductor?theme=light&style=default" alt="Featured on Orynth" width="260" height="80" />
-  </a>
+  <!-- コード例 -->
+  <div class="sl-markdown-content home-summary">
+    <h2>シンプルな統一API</h2>
+
+    <Code code={code} lang="kotlin" />
+
+  <p>同じコードが、対応するすべての地図SDKで動作します。いわば<strong>地図SDKのためのjQuery</strong>です。</p>
+  </div>
+  <!-- 動画 -->
+  <h2>紹介動画</h2>
+  <YouTube id="https://youtu.be/Sh2GAsM7Qe8" title="MapConductorの紹介" />
+
+  <!-- 主な機能 -->
+  <div class="sl-markdown-content home-summary">
+    <h2>主な機能</h2>
+    <ul>
+      <li><strong>マルチSDK対応</strong><br/>
+      Google Maps、Mapbox、HERE、ArcGISなど、単一のコードベースから複数の地図SDKを操作できます。</li>
+
+      <li><strong>統一地図API</strong><br/>
+      マーカー、シェイプ、カメラ操作、イベントを統一的に扱えます。</li>
+
+      <li><strong>ベンダーロックインからの解放</strong><br/>
+      アプリケーションロジックを書き直すことなく、地図プロバイダを変更できます。</li>
+
+      <li><strong>高パフォーマンスレンダリング</strong><br/>
+      組み込みアルゴリズムが数千個のマーカーをスムーズに処理します。</li>
+
+      <li><strong>モダンUI対応</strong><br/>
+      Jetpack ComposeとSwiftUIのワークフロー向けに設計されています。</li>
+    </ul>
+  </div> <!-- デモ -->
+
+  <YouTube id="https://youtu.be/uGjpXKX0a4w" title="Androidデモンストレーション" />
+
+  <h3>掲載先</h3>
+  <a href="https://orynth.dev/projects/mapconductor" target="_blank" rel="noopener"><img src="https://orynth.dev/api/badge/mapconductor?theme=light&style=default" alt="Featured on Orynth" width="260" height="80" /></a>
 </StarlightPage>

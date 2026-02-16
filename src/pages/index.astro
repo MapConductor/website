@@ -2,6 +2,17 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import Hero from '../components/home/Hero.astro';
 import { YouTube } from 'astro-embed';
+import { Code } from '@astrojs/starlight/components';
+
+const code = `MapView(
+    onMapClick = {
+      // onMapClickAction
+    }
+) {
+    for (markerState in markerList) {
+        Marker(state = markerState)
+    }
+}`;
 
 const content = {
   title: 'MapConductor',
@@ -68,15 +79,7 @@ const content = {
   <div class="sl-markdown-content home-summary">
     <h2>Simple Unified API</h2>
 
-```kotlin
-MapView(
-    onMapClick = ::onMapClick
-) {
-    for (markerState in markerList) {
-        Marker(state = markerState)
-    }
-}
-```
+    <Code code={code} lang="kotlin" />
 
   <p> The same code works across supported map SDKs. Think of it as <strong>jQuery for map SDKs</strong>. </p>
   </div>
