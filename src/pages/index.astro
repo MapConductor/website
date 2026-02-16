@@ -5,91 +5,108 @@ import { YouTube } from 'astro-embed';
 
 const content = {
   title: 'MapConductor',
-  description: 'A unified map SDK for mobile app developers',
-  subtitle: 'A unified map SDK\nfor mobile app developers',
-  heroMessage: `Let's make\nmap apps\neasier to build`,
-  paragraphs: [
-    '',
-    '',
-  ],
-  paragraphs2Title: 'Even pros don\'t know everything...',
-  paragraphs2: [
-    'MapConductor is an open-source SDK that lets you work with multiple map SDKs through a unified API. You don\'t need to relearn the API for each map provider, and you can focus on what you really want to do: displaying data on the map.',
-    'The project is aimed at general-purpose location-based applications and is built to be approachable even for developers who are new to Android or iOS.',
-  ],
+  description: 'Write map code once. Run it on any map SDK.',
+  subtitle: 'One API for every map SDK',
+  heroMessage: `Stop rewriting\nmap code.`,
   buttons: {
-    getStarted: 'Overview',
-    developers: 'For Developers'
+    getStarted: 'Get Started',
+    developers: 'View Docs'
   }
 };
 ---
 
 <StarlightPage frontmatter={{ title: content.title, description: content.description }}>
-  <Hero title={content.title} subtitle={content.subtitle} heroMessage={content.heroMessage} />
 
+  <Hero
+    title={content.title}
+    subtitle={content.subtitle}
+    heroMessage={content.heroMessage}
+  />
+
+  <!-- VALUE PROPOSITION -->
   <div class="sl-markdown-content home-summary">
-    <p>MapConductor absorbs the differences between numerous map SDKs and eliminates development complexity.
-      You can focus on your business logic—how you want to display data on the map—without worrying about the detailed implementation methods of each map SDK's API.
-      That's right, you can handle any supported map SDK the same way. Like an orchestra conductor handling multiple map SDKs. That's the world MapConductor aims to create.</p>
+
+  <p><strong>Write once. Run on any map SDK.</strong></p>
+
+  <p>
+  MapConductor is an open-source unified map SDK for mobile developers.
+  Use Google Maps, Mapbox, HERE, ArcGIS and more — all through one consistent API.
+  Focus on building your map experience, not rewriting integration code.
+  </p>
+
   </div>
 
-  <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
-    <a class="sl-link-button" href="/intro" style="padding: 0.75rem 1.5rem; background: var(--sl-color-accent); color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">
+  <!-- CTA -->
+  <div style="display:flex; gap:1rem; margin-top:2rem; flex-wrap:wrap;">
+    <a class="sl-link-button"
+       href="/intro"
+       style="padding:0.75rem 1.5rem; background:var(--sl-color-accent); color:white; border-radius:0.5rem; font-weight:600;">
       {content.buttons.getStarted}
     </a>
-    <a class="sl-link-button" href="https://docs-android.mapconductor.com/" style="padding: 0.75rem 1.5rem; background: transparent; color: var(--sl-color-accent); text-decoration: none; border-radius: 0.5rem; border: 2px solid var(--sl-color-accent); font-weight: 600;">
+
+    <a class="sl-link-button"
+       href="https://docs-android.mapconductor.com/"
+       style="padding:0.75rem 1.5rem; background:transparent; color:var(--sl-color-accent); border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:600;">
       {content.buttons.developers}
     </a>
   </div>
 
-  <h2>Promotional Video</h2>
-  <YouTube id="https://youtu.be/Sh2GAsM7Qe8"
-  title="MapConductor Introduction" />
 
-
+  <!-- QUICK BENEFITS -->
   <div class="sl-markdown-content home-summary">
-    <h2>Key Features</h2>
-    <ul dir="auto">
-      <li>
-        <p dir="auto"><strong>Multi-SDK Support:</strong></p>
-        <ul dir="auto">
-          <li>With a single codebase, you can operate multiple major map SDKs including Google Maps, Mapbox, HERE, and ArcGIS.</li>
-          <li>We aim to support over 50 SDKs in the future.</li>
-        </ul>
-      </li>
-      <li>
-        <p dir="auto"><strong>Common API:</strong></p>
-        <ul dir="auto">
-          <li>Just use the unified methods provided by MapConductor to display, manipulate, and plot data on maps.</li>
-          <li>No more need to learn the detailed conventions of each SDK.</li>
-        </ul>
-      </li>
-      <li>
-        <p dir="auto"><strong>(Android) Jetpack Compose Support:</strong></p>
-        <ul dir="auto">
-          <li>The Android SDK is designed to be used with Jetpack Compose.</li>
-          <li>You don't need to write code in XML Layout just for the map part.</li>
-        </ul>
-      </li>
-      <li>
-        <p dir="auto"><strong>Freedom from Vendor Lock-in:</strong></p>
-        <ul dir="auto">
-          <li>You can freely switch backend map services with minimal code changes according to your project requirements.</li>
-        </ul>
-      </li>
-      <li>
-        <p dir="auto"><strong>High Performance:</strong></p>
-        <ul dir="auto">
-          <li>Algorithms are implemented by default to smoothly handle thousands of markers</li>
-        </ul>
-      </li>
+    <h2>Why MapConductor?</h2>
+
+    <ul>
+      <li><strong>One API, multiple map providers</strong> — no SDK rewrites</li>
+      <li><strong>Switch providers anytime</strong> without vendor lock-in</li>
+      <li><strong>Built for modern mobile UI</strong> (Jetpack Compose & SwiftUI)</li>
     </ul>
   </div>
 
-  <YouTube id="https://youtu.be/uGjpXKX0a4w"  title="Android Demonstration" />
-  
-  <h3>Related:</h3>
-  <a href="https://orynth.dev/projects/mapconductor" target="_blank" rel="noopener">
-    <img src="https://orynth.dev/api/badge/mapconductor?theme=light&style=default" alt="Featured on Orynth" width="260" height="80" />
-  </a>
+
+  <!-- CODE FIRST (ENGINEERS SCAN THIS) -->
+  <div class="sl-markdown-content home-summary">
+    <h2>Simple Unified API</h2>
+
+```kotlin
+MapView(
+    onMapClick = ::onMapClick
+) {
+    for (markerState in markerList) {
+        Marker(state = markerState)
+    }
+}
+```
+
+  <p> The same code works across supported map SDKs. Think of it as <strong>jQuery for map SDKs</strong>. </p>
+  </div>
+  <!-- VIDEO -->
+  <h2>Introduction</h2>
+  <YouTube id="https://youtu.be/Sh2GAsM7Qe8" title="MapConductor Introduction" />
+
+  <!-- FEATURES -->
+  <div class="sl-markdown-content home-summary">
+    <h2>Key Capabilities</h2>
+    <ul>
+      <li><strong>Multi-SDK Support</strong><br/>
+      Operate Google Maps, Mapbox, HERE, ArcGIS and more from a single codebase.</li>
+    
+      <li><strong>Unified Map API</strong><br/>
+      Display markers, shapes, camera controls, and events consistently.</li>
+    
+      <li><strong>Freedom from Vendor Lock-in</strong><br/>
+      Change map providers without rewriting your application logic.</li>
+    
+      <li><strong>High-Performance Rendering</strong><br/>
+      Built-in algorithms handle thousands of markers smoothly.</li>
+    
+      <li><strong>Modern UI Support</strong><br/>
+      Designed for Jetpack Compose and SwiftUI workflows.</li>
+    </ul>
+  </div> <!-- DEMO -->
+
+  <YouTube id="https://youtu.be/uGjpXKX0a4w" title="Android Demonstration" />
+
+  <h3>Featured</h3>
+  <a href="https://orynth.dev/projects/mapconductor" target="_blank" rel="noopener"><img src="https://orynth.dev/api/badge/mapconductor?theme=light&style=default" alt="Featured on Orynth" width="260" height="80" /></a>
 </StarlightPage>
