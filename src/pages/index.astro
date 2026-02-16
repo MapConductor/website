@@ -2,33 +2,6 @@
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import Hero from '../components/home/Hero.astro';
 import { YouTube } from 'astro-embed';
-import { Code } from '@astrojs/starlight/components';
-
-const code = `MapView(
-    onMapClick = {
-      // onMapClickAction
-    }
-) {
-    for (markerState in markerList) {
-        Marker(state = markerState)
-    }
-}`;
-
-const content = {
-  title: 'MapConductor',
-  description: 'Write map code once. Run it on any map SDK.',
-  subtitle: 'One API for every map SDK',
-  heroMessage: `Stop rewriting\nmap code.`,
-  buttons: {
-    getStarted: 'Get Started',
-    developers: 'View Docs'
-  }
-};
----
----
-import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import Hero from '../components/home/Hero.astro';
-import { YouTube } from 'astro-embed';
 
 const content = {
   title: 'MapConductor',
