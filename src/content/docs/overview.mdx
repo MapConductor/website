@@ -1,0 +1,126 @@
+---
+title: Overview
+description: What MapConductor is and why it exists.
+---
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+
+MapConductor is an open-source middleware SDK that lets you work with multiple map SDKs through a unified programming model.
+
+Instead of learning and rewriting code for each map provider, you can focus on building location-based experiences using a consistent API.
+
+---
+
+## The Problem
+
+Building map applications often means dealing with multiple SDKs — each with different APIs, behaviors, and design concepts.
+
+
+<div class="flex flex-wrap manga">
+  <div class="flex-1" style="margin: 0px;">![You are stuck on building a map application](~/assets/overview/en/1.png)</div>
+  <div class="flex-1" style="margin: 0px;">![Why is making a map app this hard? It should be easier...](~/assets/overview/en/2.png)</div>
+  <div class="flex-1" style="margin: 0px;">![Different syntax, different behavior..., this is too hard!](~/assets/overview/en/3.png)</div>
+</div>
+
+Even simple features require relearning how each SDK works.  
+As projects grow, switching providers or supporting multiple platforms becomes increasingly complex.
+
+---
+
+## One Syntax for Every Map SDK
+
+MapConductor introduces a unified layer between your application and map SDKs.
+
+<div class="flex flex-wrap manga">
+  <div class="flex-1" style="margin: 0px;">![Ta-da!](~/assets/overview/en/4.png)</div>
+  <div class="flex-1" style="margin: 0px;">![Looks like you're stuck. I'm MapConductor.](~/assets/overview/en/5.png)</div>
+  <div class="flex-1" style="margin: 0px;">![I help map SDKs speak the same language!](~/assets/overview/en/6.png)</div>
+</div>
+
+It provides a shared programming model that allows map SDKs to be handled in the same way.
+
+Your application interacts with MapConductor — MapConductor handles the differences.
+
+---
+
+## Write Once, Use Any Map SDK
+
+With MapConductor, the same application logic can work across supported map SDKs.
+
+<div class="flex flex-wrap manga">
+  <div class="flex-1" style="margin: 0px;">![With MapConductor, you can use any map SDK with the same syntax.](~/assets/overview/en/7.png)</div>
+  <div class="flex-1" style="margin: 0px;">![Wait! So, I can use the same code for Google Maps and Mapbox?](~/assets/overview/en/8.png)</div>
+</div>
+
+You write map features once using a unified API, while MapConductor adapts behavior to each underlying SDK.
+
+This reduces implementation differences without hiding platform capabilities.
+
+---
+
+## Built for Real Map Development
+
+MapConductor is not just a thin wrapper.  
+It builds on shared concepts across map SDKs and adds practical capabilities designed for real applications.
+
+<div class="flex flex-wrap manga">
+  <div class="flex-1" style="margin: 0px;">![Markers, polylines, camera controls, events - you can do it all!](~/assets/overview/en/9.png)</div>
+</div>
+
+Supported features include:
+- Markers and info bubbles (annotations)
+- Polylines and polygons
+- Camera control
+- Event handling
+- Clustering and visualization utilities
+- High-performance rendering extensions
+
+---
+
+## A Better Developer Experience
+
+When APIs behave consistently, development becomes simpler and more predictable.
+
+<div class="flex flex-wrap manga">
+  <div class="flex-1" style="margin: 0px;">![Wow! The same code works! This makes development so much easier!](~/assets/overview/en/10.png)</div>
+  <div class="flex-1" style="margin: 0px;">![Whoa! This is so easy! I can even do this!](~/assets/overview/en/11.png)</div>
+</div>
+
+Developers can focus on application logic instead of SDK-specific implementation details.
+
+---
+
+## One Mental Model Across Platforms
+
+MapConductor extends the same development approach across platforms.
+
+<div class="flex flex-wrap manga">
+  <div class="flex-1" style="margin: 0px;">![And it gets even better - the same code works on iOS and Android!](~/assets/overview/en/12.png)</div>
+</div>
+
+The same concepts can be used with modern UI frameworks such as:
+
+- Jetpack Compose (Android)
+- SwiftUI (iOS)
+
+This reduces cognitive overhead when building cross-platform map applications.
+
+---
+
+## Simple, Flexible, Practical
+
+MapConductor allows you to choose the map SDK that fits your needs while keeping development consistent and maintainable.
+
+<div class="flex flex-wrap manga">
+  <div class="flex-1" style="margin: 0px;">![Pretty simple, right?](~/assets/overview/en/13.png)</div>
+</div>
+
+Whether you stay with a single provider or support multiple ones, MapConductor helps you build map applications more efficiently.
+
+---
+
+## Next Steps
+
+- Learn how MapConductor works → [Architecture](/architecture)
+- See future plans → [Roadmap](/roadmap)
+- Start building → [For Developers](/developers)

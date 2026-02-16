@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/* Ensure Tailwind scans Starlight docs content (MD/MDX) and Astro files. */
+@source "../**/*.{astro,html,js,jsx,ts,tsx,md,mdx}";
+
+.manga {
+  display: flex;
+  align-items: stretch;
+  gap: 0px;
+}
+.manga div {
+  flex: 1; /* 均等に縮小 */
+  min-height: 0; /* 縮小のバグを回避 */
+  height: 250px;
+}
+.manga div img {
+  min-width: 250px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

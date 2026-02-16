@@ -1,0 +1,97 @@
+---
+id: overview
+title: 概要
+description: MapConductorの概要
+sidebar_label: 概要
+---
+
+MapConductorは、複数の地図SDKを共通のプログラミングモデルで扱うためのオープンソースSDKです。
+
+地図SDKごとの違いを意識することなく、位置情報を活用したアプリケーション開発に集中できます。
+
+---
+
+## 課題：地図SDKごとに異なる実装
+
+地図アプリ開発では、SDKごとにAPI設計や挙動が異なります。
+
+同じ機能でも実装方法が変わり、複数SDKへの対応や切り替えは大きな負担になります。
+
+<div class="flex flex-wrap manga">
+  <div class="flex-1" style="margin: 0px;">![You are stuck on building a map application](~/assets/overview/en/1.png)</div>
+  <div class="flex-1" style="margin: 0px;">![Why is making a map app this hard? It should be easier...](~/assets/overview/en/2.png)</div>
+  <div class="flex-1" style="margin: 0px;">![Different syntax, different behavior..., this is too hard!](~/assets/overview/en/3.png)</div>
+</div>
+
+---
+
+## すべての地図SDKを同じ書き方で
+
+MapConductorは、アプリケーションと地図SDKの間に共通レイヤーを提供します。
+
+アプリはMapConductorのAPIのみを利用し、SDKごとの差異は内部で処理されます。
+
+<div class="flex flex-wrap manga">
+  <div class="flex-1" style="margin: 0px;">![Ta-da!](~/assets/overview/en/4.png)</div>
+  <div class="flex-1" style="margin: 0px;">![Looks like you're stuck. I'm MapConductor.](~/assets/overview/en/5.png)</div>
+  <div class="flex-1" style="margin: 0px;">![I help map SDKs speak the same language!](~/assets/overview/en/6.png)</div>
+</div>
+
+---
+
+## 一度書けば、どの地図SDKでも動作
+統一されたAPIを使って実装したロジックを、そのまま複数の地図SDKで利用できます。
+
+SDKごとの違いを吸収しながら、それぞれの機能も活かせる設計になっています。
+
+<div class="flex flex-wrap manga">
+  <div class="flex-1" style="margin: 0px;">![With MapConductor, you can use any map SDK with the same syntax.](~/assets/overview/en/7.png)</div>
+  <div class="flex-1" style="margin: 0px;">![Wait! So, I can use the same code for Google Maps and Mapbox?](~/assets/overview/en/8.png)</div>
+</div>
+
+---
+
+## 単なるラッパーではありません
+
+<div class="flex flex-wrap manga">
+  <div class="flex-1" style="margin: 0px;">![Markers, polylines, camera controls, events - you can do it all!](~/assets/overview/en/9.png)</div>
+</div>
+
+MapConductorは共通部分をまとめるだけではなく、実用的な地図アプリ開発を支える機能を提供します。
+
+- マーカー・図形描画
+- カメラ操作
+- イベント処理
+- クラスタリングや可視化機能
+- 高性能な描画拡張
+
+---
+
+## 開発体験をシンプルに
+
+APIの扱い方が統一されることで、SDKごとの実装差異に悩まされることが減り、アプリのロジックに集中できます。
+
+
+<div class="flex flex-wrap manga">
+  <div class="flex-1" style="margin: 0px;">![Wow! The same code works! This makes development so much easier!](~/assets/overview/en/10.png)</div>
+  <div class="flex-1" style="margin: 0px;">![Whoa! This is so easy! I can even do this!](~/assets/overview/en/11.png)</div>
+</div>
+---
+
+## シンプルで柔軟、そして実用的
+
+<div class="flex flex-wrap manga">
+  <div class="flex-1" style="margin: 0px;">![And it gets even better - the same code works on iOS and Android!](~/assets/overview/en/12.png)</div>
+</div>
+
+利用する地図SDKは用途に応じて選択できます。
+
+単一SDKでの開発でも、複数SDK対応でも、MapConductorは開発をよりシンプルにします。
+
+---
+
+## 次のステップ
+
+- 仕組みを知る → [Architecture](/architecture)
+- 今後の計画 → [Roadmap](/roadmap)
+- 開発を始める → [For Developers](/developers)
