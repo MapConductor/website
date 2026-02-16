@@ -19,13 +19,13 @@ const content = {
   subtitle: 'One API for every map SDK',
   heroMessage: `Write map code once.\nRun it anywhere.`,
   buttons: {
-    getStarted: 'Get Started',
-    github: 'Star on GitHub',
-    docs: 'View Docs',
+    getStarted: 'Overview',
+    android: '⭐ Android SDK',
+    ios: '⭐ iOS SDK'
   },
   links: {
-    github: 'https://github.com/MapConductor/MapConductor', // TODO: ここを実URLに
-    docs: 'https://docs-android.mapconductor.com/',
+    android: 'https://github.com/MapConductor/android-sdk',
+    ios: 'https://github.com/MapConductor/ios-sdk'
   }
 };
 ---
@@ -40,33 +40,46 @@ const content = {
 
   <!-- HERO: one-glance explanation -->
   <div class="sl-markdown-content home-summary">
-    <p><strong>Stop rewriting map integrations.</strong></p>
     <p>
-      MapConductor is an open-source unified map SDK for modern mobile apps.
-      Use Google Maps, Mapbox, ArcGIS, and more through one consistent API.
+    MapConductor is an open-source unified map SDK that lets you use
+    multiple map providers through a single API.
+    </p>
+    
+    <p>
+    Write your map logic once and run it on Google Maps,
+    Mapbox, ArcGIS, and more — without rewriting your code.
     </p>
   </div>
-
+    <h3>Choose your platform</h3>
+    
+    <ul>
+      <li><strong>Android</strong> — Kotlin + Jetpack Compose</li>
+      <li><strong>iOS</strong> — SwiftUI native support</li>
+    </ul>
   <!-- CTA: action-first -->
-  <div style="display:flex; gap:1rem; margin-top:1.25rem; flex-wrap:wrap;">
-    <a class="sl-link-button"
-       href="/intro"
-       style="padding:0.75rem 1.25rem; background:var(--sl-color-accent); color:white; border-radius:0.5rem; font-weight:700;">
-      {content.buttons.getStarted}
-    </a>
-
-    <a class="sl-link-button"
-       href={content.links.github}
-       style="padding:0.75rem 1.25rem; background:transparent; color:var(--sl-color-accent); border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:700;">
-      {content.buttons.github}
-    </a>
-
-    <a class="sl-link-button"
-       href={content.links.docs}
-       style="padding:0.75rem 1.25rem; background:transparent; color:var(--sl-color-text); border:2px solid var(--sl-color-border); border-radius:0.5rem; font-weight:700;">
-      {content.buttons.docs}
-    </a>
-  </div>
+    <div style="display:flex; gap:1rem; margin-top:1.25rem; flex-wrap:wrap;">
+    
+      <a class="sl-link-button"
+         href="/intro"
+         style="padding:0.75rem 1.25rem; background:var(--sl-color-accent); color:white; border-radius:0.5rem; font-weight:700;">
+        {content.buttons.getStarted}
+      </a>
+    
+      <a class="sl-link-button"
+         href={content.links.android}
+         target="_blank"
+         style="padding:0.75rem 1.25rem; border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:700;">
+        {content.buttons.android}
+      </a>
+    
+      <a class="sl-link-button"
+         href={content.links.ios}
+         target="_blank"
+         style="padding:0.75rem 1.25rem; border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:700;">
+        {content.buttons.ios}
+      </a>
+    
+    </div>
 
   <!-- 3 BENEFITS: scan-friendly -->
   <div class="sl-markdown-content home-summary" style="margin-top:1.5rem;">
