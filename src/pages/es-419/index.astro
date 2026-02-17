@@ -21,7 +21,12 @@ const content = {
   heroMessage: `Deja de reescribir\ncódigo de mapas.`,
   buttons: {
     getStarted: 'Comenzar',
-    developers: 'Ver documentación'
+    android: '⭐ Android SDK',
+    ios: '⭐ iOS SDK'
+  },
+  links: {
+    android: 'https://github.com/MapConductor/android-sdk',
+    ios: 'https://github.com/MapConductor/ios-sdk'
   }
 };
 ---
@@ -48,18 +53,28 @@ const content = {
   </div>
 
   <!-- CTA -->
-  <div style="display:flex; gap:1rem; margin-top:2rem; flex-wrap:wrap;">
+  <div style="display:flex; gap:1rem; margin-top:1.25rem; flex-wrap:wrap;">
+  
     <a class="sl-link-button"
-       href="/es-419/intro"
-       style="padding:0.75rem 1.5rem; background:var(--sl-color-accent); color:white; border-radius:0.5rem; font-weight:600;">
+        href="/intro"
+        style="padding:0.75rem 1.25rem; background:var(--sl-color-accent); color:white; border-radius:0.5rem; font-weight:700;">
       {content.buttons.getStarted}
     </a>
-
+  
     <a class="sl-link-button"
-       href="https://docs-android.mapconductor.com/es-419/"
-       style="padding:0.75rem 1.5rem; background:transparent; color:var(--sl-color-accent); border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:600;">
-      {content.buttons.developers}
+        href={content.links.android}
+        target="_blank"
+        style="padding:0.75rem 1.25rem; border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:700;">
+      {content.buttons.android}
     </a>
+  
+    <a class="sl-link-button"
+        href={content.links.ios}
+        target="_blank"
+        style="padding:0.75rem 1.25rem; border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:700;">
+      {content.buttons.ios}
+    </a>
+  
   </div>
 
 
