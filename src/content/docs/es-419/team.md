@@ -11,4 +11,3 @@ Masashi es Google Developer Expert (GDE) en Maps y cuenta con alrededor de una d
 ## Takaaki Omori – Ingeniero de software / Co-mantenedor
 
 Takaaki contribuye al desarrollo central de MapConductor y ayuda a mantener la base de código a medida que el proyecto evoluciona.
-

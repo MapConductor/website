@@ -1,10 +1,6 @@
 {
   "defaultLocale": "en",
-  "locales": [
-    "en",
-    "ja",
-    "es-419"
-  ],
+  "locales": ["en", "ja", "es-419"],
   "path": "i18n",
   "currentLocale": "es-419",
   "localeConfigs": {

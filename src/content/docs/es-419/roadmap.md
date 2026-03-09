@@ -29,4 +29,3 @@ Hoy en día, el SDK de Android ya está publicado y se utiliza en aplicaciones d
 La financiación también apoyaría actividades de difusión y comunidad: charlas en eventos alrededor del mundo, actividades como bug-hunting o reconocimiento a contribuyentes destacados, y la creación de espacios para que nuevas personas se puedan sumar al desarrollo principal.
 
 Queremos que MapConductor sea sostenible como proyecto comunitario. Eso implica una gobernanza clara, toma de decisiones transparente y un entorno donde se valoren las contribuciones de muchas personas.
-
