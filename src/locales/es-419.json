@@ -1,0 +1,58 @@
+{
+  "title": "MapConductor",
+  "description": "Escribe el código del mapa una vez. Ejecútalo en cualquier SDK de mapas.",
+  "subtitle": "Una API para todos los SDK de mapas",
+  "heroMessage": "Deja de reescribir\ncódigo de mapas.",
+  "buttons": {
+    "getStarted": "Comenzar",
+    "android": "⭐ Android SDK",
+    "ios": "⭐ iOS SDK",
+    "discord": "Unirse al Discord"
+  },
+  "links": {
+    "android": "https://github.com/MapConductor/android-sdk",
+    "ios": "https://github.com/MapConductor/ios-sdk",
+    "discord": "https://discord.gg/Zr6tyX99E4"
+  },
+  "home": {
+    "valueProposition": {
+      "intro": "<strong>Escríbelo una vez. Ejecútalo en cualquier SDK de mapas.</strong>",
+      "writeOnce": "MapConductor es un SDK de mapas unificado y de código abierto para desarrolladores móviles. Usa Google Maps, Mapbox, HERE, ArcGIS y más — todo a través de una sola API consistente. Concéntrate en crear tu experiencia de mapas, no en reescribir código de integración."
+    },
+    "platforms": {
+      "title": "¿Por qué MapConductor?",
+      "android": "<strong>Una API, múltiples proveedores de mapas</strong> — sin reescribir por cada SDK",
+      "ios": "<strong>Cambia de proveedor en cualquier momento</strong> sin dependencia de un solo vendor"
+    },
+    "benefits": {
+      "oneApi": "<strong>Una API, múltiples proveedores de mapas</strong> — sin reescribir por cada SDK",
+      "switchProviders": "<strong>Cambia de proveedor en cualquier momento</strong> sin dependencia de un solo vendor",
+      "modernUi": "<strong>Diseñado para UI móvil moderna</strong> (Jetpack Compose y SwiftUI)"
+    },
+    "api": {
+      "title": "API unificada y simple",
+      "description": "El mismo código funciona en todos los SDK de mapas compatibles. Piénsalo como un <strong>jQuery para SDK de mapas</strong>."
+    },
+    "overview": {
+      "title": "Introducción"
+    },
+    "features": {
+      "title": "Funcionalidades clave",
+      "markers": "<strong>Soporte multi-SDK</strong><br /> Opera Google Maps, Mapbox, HERE, ArcGIS y más desde una sola base de código.",
+      "camera": "<strong>API de mapas unificada</strong><br /> Muestra marcadores, formas, controles de cámara y eventos de manera consistente.",
+      "events": "<strong>Libertad del bloqueo de proveedor</strong><br /> Cambia de proveedor de mapas sin reescribir la lógica de tu aplicación.",
+      "performance": "<strong>Renderizado de alto rendimiento</strong><br /> Algoritmos integrados que manejan miles de marcadores sin problemas.",
+      "modernUi": "<strong>Soporte de UI moderna</strong><br /> Diseñado para flujos de trabajo con Jetpack Compose y SwiftUI."
+    },
+    "demo": {
+      "title": "Demostración en Android"
+    },
+    "community": {
+      "title": "Comunidad de Desarrolladores",
+      "description": "Estamos abriendo la comunidad de desarrolladores en Discord. Publicaremos información sobre actualizaciones y eventos allí."
+    },
+    "featured": {
+      "title": "Destacado en"
+    }
+  }
+}

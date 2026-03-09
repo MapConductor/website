@@ -1,0 +1,58 @@
+{
+  "title": "MapConductor",
+  "description": "Write map code once. Run it on any map SDK.",
+  "subtitle": "One API for every map SDK",
+  "heroMessage": "Write map code once.\nRun it anywhere.",
+  "buttons": {
+    "getStarted": "Overview",
+    "android": "⭐ Android SDK",
+    "ios": "⭐ iOS SDK",
+    "discord": "Join the Discord"
+  },
+  "links": {
+    "android": "https://github.com/MapConductor/android-sdk",
+    "ios": "https://github.com/MapConductor/ios-sdk",
+    "discord": "https://discord.gg/Zr6tyX99E4"
+  },
+  "home": {
+    "valueProposition": {
+      "intro": "MapConductor is an open-source unified map SDK that lets you use multiple map providers through a single API.",
+      "writeOnce": "Write your map logic once and run it on Google Maps, Mapbox, ArcGIS, and more — without rewriting your code."
+    },
+    "platforms": {
+      "title": "Choose your platform",
+      "android": "<strong>Android</strong> — Kotlin + Jetpack Compose",
+      "ios": "<strong>iOS</strong> — SwiftUI native support"
+    },
+    "benefits": {
+      "oneApi": "<strong>One API across map SDKs</strong> — no rewrites",
+      "switchProviders": "<strong>Switch providers anytime</strong> — avoid lock-in",
+      "modernUi": "<strong>Built for modern UI</strong> — Compose & SwiftUI"
+    },
+    "api": {
+      "title": "Unified API",
+      "description": "The same code works across supported map SDKs. Think of it as <strong>jQuery for map SDKs</strong>."
+    },
+    "overview": {
+      "title": "Quick overview"
+    },
+    "features": {
+      "title": "What you can do",
+      "markers": "<strong>Markers, polylines, polygons, circles</strong>",
+      "camera": "<strong>Camera controls & gestures</strong>",
+      "events": "<strong>Events & interaction</strong>",
+      "performance": "<strong>High-performance marker rendering</strong>",
+      "modernUi": "<strong>Modern UI support</strong><br /> Designed for Jetpack Compose and SwiftUI workflows."
+    },
+    "demo": {
+      "title": "Demo"
+    },
+    "community": {
+      "title": "Developers Community",
+      "description": "We are opening the developers community on Discord. We will post updates and event information there."
+    },
+    "featured": {
+      "title": "Featured in"
+    }
+  }
+}

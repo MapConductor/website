@@ -49,7 +49,7 @@ export default defineConfig({
                 {
                     label: 'What is MapConductor',
                     translations: {
-                        ja: 'マップコンダクターについて',
+                        ja: 'MapConductorについて',
                     },
                     items: [
                         {

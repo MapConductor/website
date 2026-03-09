@@ -1,0 +1,58 @@
+{
+  "title": "MapConductor",
+  "description": "一度書くだけで、あらゆる地図SDKで動く。",
+  "subtitle": "すべての地図SDKに対応する統一API",
+  "heroMessage": "地図コードの\n書き直しを\nやめよう。",
+  "buttons": {
+    "getStarted": "はじめる",
+    "android": "⭐ Android SDK",
+    "ios": "⭐ iOS SDK",
+    "discord": "Discord に参加する"
+  },
+  "links": {
+    "android": "https://github.com/MapConductor/android-sdk",
+    "ios": "https://github.com/MapConductor/ios-sdk",
+    "discord": "https://discord.gg/Zr6tyX99E4"
+  },
+  "home": {
+    "valueProposition": {
+      "intro": "<strong>一度書くだけ。あらゆる地図SDKで動く。</strong>",
+      "writeOnce": "MapConductorは、モバイル開発者のためのオープンソース統一地図SDKです。 Google Maps、Mapbox、HERE、ArcGISなど、すべて一つの統一されたAPIで利用できます。 地図体験の構築に集中しましょう。インテグレーションコードの書き直しは不要です。"
+    },
+    "platforms": {
+      "title": "なぜMapConductorなのか？",
+      "android": "<strong>1つのAPI、複数の地図プロバイダ</strong> — SDKごとの書き直し不要",
+      "ios": "<strong>いつでもプロバイダを切り替え可能</strong> — ベンダーロックインなし"
+    },
+    "benefits": {
+      "oneApi": "<strong>1つのAPI、複数の地図プロバイダ</strong> — SDKごとの書き直し不要",
+      "switchProviders": "<strong>いつでもプロバイダを切り替え可能</strong> — ベンダーロックインなし",
+      "modernUi": "<strong>モダンなモバイルUI向けに設計</strong>（Jetpack Compose & SwiftUI）"
+    },
+    "api": {
+      "title": "シンプルな統一API",
+      "description": "同じコードが、対応するすべての地図SDKで動作します。いわば<strong>地図SDKのためのjQuery</strong>です。"
+    },
+    "overview": {
+      "title": "紹介動画"
+    },
+    "features": {
+      "title": "主な機能",
+      "markers": "<strong>マルチSDK対応</strong><br /> Google Maps、Mapbox、HERE、ArcGISなど、単一のコードベースから複数の地図SDKを操作できます。",
+      "camera": "<strong>統一地図API</strong><br /> マーカー、シェイプ、カメラ操作、イベントを統一的に扱えます。",
+      "events": "<strong>ベンダーロックインからの解放</strong><br /> アプリケーションロジックを書き直すことなく、地図プロバイダを変更できます。",
+      "performance": "<strong>高パフォーマンスレンダリング</strong><br /> 組み込みアルゴリズムが数千個のマーカーをスムーズに処理します。",
+      "modernUi": "<strong>モダンUI対応</strong><br /> Jetpack ComposeとSwiftUIのワークフロー向けに設計されています。"
+    },
+    "demo": {
+      "title": "デモ"
+    },
+    "community": {
+      "title": "開発者コミュニティ",
+      "description": "Discord で開発者向けコミュニティを展開しています。<br /> アップデートやイベント登壇情報など、新しい情報を逐次公開していきますので、ぜひ参加をお願いいたします。"
+    },
+    "featured": {
+      "title": "掲載先"
+    }
+  }
+}
