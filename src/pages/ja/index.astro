@@ -1,8 +1,8 @@
 ---
-import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import Hero from '../../components/home/Hero.astro';
-import { YouTube } from 'astro-embed';
-import { Code } from '@astrojs/starlight/components';
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import Hero from "../../components/home/Hero.astro";
+import { YouTube } from "astro-embed";
+import { Code } from "@astrojs/starlight/components";
 
 const code = `MapView(
     onMapClick = {
@@ -15,24 +15,27 @@ const code = `MapView(
 }`;
 
 const content = {
-  title: 'MapConductor',
-  description: '一度書くだけで、あらゆる地図SDKで動く。',
-  subtitle: 'すべての地図SDKに対応する統一API',
+  title: "MapConductor",
+  description: "一度書くだけで、あらゆる地図SDKで動く。",
+  subtitle: "すべての地図SDKに対応する統一API",
   heroMessage: `地図コードの\n書き直しを\nやめよう。`,
   buttons: {
-    getStarted: 'はじめる',
-    android: '⭐ Android SDK',
-    ios: '⭐ iOS SDK'
+    getStarted: "はじめる",
+    android: "⭐ Android SDK",
+    ios: "⭐ iOS SDK",
+    discord: "Discord に参加する",
   },
   links: {
-    android: 'https://github.com/MapConductor/android-sdk',
-    ios: 'https://github.com/MapConductor/ios-sdk'
-  }
+    android: "https://github.com/MapConductor/android-sdk",
+    ios: "https://github.com/MapConductor/ios-sdk",
+    discord: "https://discord.gg/Zr6tyX99E4",
+  },
 };
 ---
 
-<StarlightPage frontmatter={{ title: content.title, description: content.description }}>
-
+<StarlightPage
+  frontmatter={{ title: content.title, description: content.description }}
+>
   <Hero
     title={content.title}
     subtitle={content.subtitle}
@@ -41,54 +44,62 @@ const content = {
 
   <!-- 価値提案 -->
   <div class="sl-markdown-content home-summary">
+    <p><strong>一度書くだけ。あらゆる地図SDKで動く。</strong></p>
 
-  <p><strong>一度書くだけ。あらゆる地図SDKで動く。</strong></p>
-
-  <p>
-  MapConductorは、モバイル開発者のためのオープンソース統一地図SDKです。
-  Google Maps、Mapbox、HERE、ArcGISなど、すべて一つの統一されたAPIで利用できます。
-  地図体験の構築に集中しましょう。インテグレーションコードの書き直しは不要です。
-  </p>
-
+    <p>
+      MapConductorは、モバイル開発者のためのオープンソース統一地図SDKです。
+      Google
+      Maps、Mapbox、HERE、ArcGISなど、すべて一つの統一されたAPIで利用できます。
+      地図体験の構築に集中しましょう。インテグレーションコードの書き直しは不要です。
+    </p>
   </div>
 
   <!-- CTA -->
   <div style="display:flex; gap:1rem; margin-top:1.25rem; flex-wrap:wrap;">
-  
-    <a class="sl-link-button"
-        href="/intro"
-        style="padding:0.75rem 1.25rem; background:var(--sl-color-accent); color:white; border-radius:0.5rem; font-weight:700;">
+    <a
+      class="sl-link-button"
+      href="/intro"
+      style="padding:0.75rem 1.25rem; background:var(--sl-color-accent); color:white; border-radius:0.5rem; font-weight:700;"
+    >
       {content.buttons.getStarted}
     </a>
-  
-    <a class="sl-link-button"
-        href={content.links.android}
-        target="_blank"
-        style="padding:0.75rem 1.25rem; border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:700;">
+
+    <a
+      class="sl-link-button"
+      href={content.links.android}
+      target="_blank"
+      style="padding:0.75rem 1.25rem; border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:700;"
+    >
       {content.buttons.android}
     </a>
-  
-    <a class="sl-link-button"
-        href={content.links.ios}
-        target="_blank"
-        style="padding:0.75rem 1.25rem; border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:700;">
+
+    <a
+      class="sl-link-button"
+      href={content.links.ios}
+      target="_blank"
+      style="padding:0.75rem 1.25rem; border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:700;"
+    >
       {content.buttons.ios}
     </a>
-  
   </div>
-
 
   <!-- メリット -->
   <div class="sl-markdown-content home-summary">
     <h2>なぜMapConductorなのか？</h2>
 
     <ul>
-      <li><strong>1つのAPI、複数の地図プロバイダ</strong> — SDKごとの書き直し不要</li>
-      <li><strong>いつでもプロバイダを切り替え可能</strong> — ベンダーロックインなし</li>
-      <li><strong>モダンなモバイルUI向けに設計</strong>（Jetpack Compose & SwiftUI）</li>
+      <li>
+        <strong>1つのAPI、複数の地図プロバイダ</strong> — SDKごとの書き直し不要
+      </li>
+      <li>
+        <strong>いつでもプロバイダを切り替え可能</strong> — ベンダーロックインなし
+      </li>
+      <li>
+        <strong>モダンなモバイルUI向けに設計</strong>（Jetpack Compose &
+        SwiftUI）
+      </li>
     </ul>
   </div>
-
 
   <!-- コード例 -->
   <div class="sl-markdown-content home-summary">
@@ -96,7 +107,11 @@ const content = {
 
     <Code code={code} lang="kotlin" />
 
-  <p>同じコードが、対応するすべての地図SDKで動作します。いわば<strong>地図SDKのためのjQuery</strong>です。</p>
+    <p>
+      同じコードが、対応するすべての地図SDKで動作します。いわば<strong
+        >地図SDKのためのjQuery</strong
+      >です。
+    </p>
   </div>
   <!-- 動画 -->
   <h2>紹介動画</h2>
@@ -106,25 +121,67 @@ const content = {
   <div class="sl-markdown-content home-summary">
     <h2>主な機能</h2>
     <ul>
-      <li><strong>マルチSDK対応</strong><br/>
-      Google Maps、Mapbox、HERE、ArcGISなど、単一のコードベースから複数の地図SDKを操作できます。</li>
+      <li>
+        <strong>マルチSDK対応</strong><br />
+        Google Maps、Mapbox、HERE、ArcGISなど、単一のコードベースから複数の地図SDKを操作できます。
+      </li>
 
-      <li><strong>統一地図API</strong><br/>
-      マーカー、シェイプ、カメラ操作、イベントを統一的に扱えます。</li>
+      <li>
+        <strong>統一地図API</strong><br />
+        マーカー、シェイプ、カメラ操作、イベントを統一的に扱えます。
+      </li>
 
-      <li><strong>ベンダーロックインからの解放</strong><br/>
-      アプリケーションロジックを書き直すことなく、地図プロバイダを変更できます。</li>
+      <li>
+        <strong>ベンダーロックインからの解放</strong><br />
+        アプリケーションロジックを書き直すことなく、地図プロバイダを変更できます。
+      </li>
 
-      <li><strong>高パフォーマンスレンダリング</strong><br/>
-      組み込みアルゴリズムが数千個のマーカーをスムーズに処理します。</li>
+      <li>
+        <strong>高パフォーマンスレンダリング</strong><br />
+        組み込みアルゴリズムが数千個のマーカーをスムーズに処理します。
+      </li>
 
-      <li><strong>モダンUI対応</strong><br/>
-      Jetpack ComposeとSwiftUIのワークフロー向けに設計されています。</li>
+      <li>
+        <strong>モダンUI対応</strong><br />
+        Jetpack ComposeとSwiftUIのワークフロー向けに設計されています。
+      </li>
     </ul>
-  </div> <!-- デモ -->
+  </div>
+  <!-- デモ -->
 
-  <YouTube id="https://youtu.be/uGjpXKX0a4w" title="Androidデモンストレーション" />
+  <YouTube
+    id="https://youtu.be/uGjpXKX0a4w"
+    title="Androidデモンストレーション"
+  />
+
+  <!-- 開発者コミュニティ -->
+  <h2>開発者コミュニティ</h2>
+  <div class="sl-markdown-content home-summary"></div>
+  <p style="margin-bottom: 1rem;">
+    Discord で開発者向けコミュニティを展開しています。<br />
+    アップデートやイベント登壇情報など、新しい情報を逐次公開していきますので、ぜひ参加をお願いいたします。
+  </p>
+
+  <a
+    class="sl-link-button"
+    href={content.links.discord}
+    style="padding:0.75rem 1.25rem; background:var(--sl-color-accent); color:white; border-radius:0.5rem; font-weight:700;"
+  >
+    {content.buttons.discord}
+  </a>
 
   <h3>掲載先</h3>
-  <a href="https://orynth.dev/projects/mapconductor" target="_blank" rel="noopener"><img src="https://orynth.dev/api/badge/mapconductor?theme=light&style=default" alt="Featured on Orynth" width="260" height="80" /></a>
+  <div class="sl-markdown-content home-summary">
+    <a
+      href="https://orynth.dev/projects/mapconductor"
+      target="_blank"
+      rel="noopener"
+      ><img
+        src="https://orynth.dev/api/badge/mapconductor?theme=light&style=default"
+        alt="Featured on Orynth"
+        width="260"
+        height="80"
+      />
+    </a>
+  </div>
 </StarlightPage>
