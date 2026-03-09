@@ -1,49 +1,60 @@
-# Starlight Starter Kit: Basics
+# MapConductor Documentation Site
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+Welcome to the MapConductor documentation repository! This website is built using [Astro](https://astro.build/) and [Starlight](https://starlight.astro.build/) to provide comprehensive documentation for the MapConductor SDK. It serves the content for [mapconductor.com](https://mapconductor.com).
 
-```
-npm create astro@latest -- --template starlight
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+MapConductor is a unified map SDK that lets developers write map logic once and run it across multiple map providers (Google Maps, Mapbox, ArcGIS, etc.) without rewriting code.
 
 ## 🚀 Project Structure
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+Inside this Astro + Starlight project, you'll see the following key folders and files:
 
-```
+```text
 .
-├── public/
+├── public/                 # Static assets like favicons
 ├── src/
-│   ├── assets/
+│   ├── assets/             # Images to be embedded in Markdown
 │   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+│   │   └── docs/           # 📝 ALL DOCUMENTATION CONTENT GOES HERE
+│   │       ├── ja/         # Japanese translation
+│   │       └── es-419/     # Spanish (Latin America) translation
+│   └── styles/             # Custom CSS
+├── astro.config.mjs        # Main configuration file (Sidebar menus, locales, plugins)
+└── package.json
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+## ️🌍 Multiple Languages
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+MapConductor's documentation supports multiple languages. If you are adding or updating content:
+- **English (Root)**: Placed directly in `src/content/docs/`. It acts as the default fallback language.
+- **Japanese**: Placed in `src/content/docs/ja/`
+- **Spanish (Latin America)**: Placed in `src/content/docs/es-419/`
 
-Static assets, like favicons, can be placed in the `public/` directory.
+## 💻 Local Development Environment
 
-## 🧞 Commands
+We recommend using VS Code for development. Please install the following extensions:
+- [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
-All commands are run from the root of the project, from a terminal:
+### Running the Site Locally
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+All commands should be run from the root of the project in your terminal.
 
-## 👀 Want to learn more?
+| Command             | Action                                           |
+| :------------------ | :----------------------------------------------- |
+| `npm install`       | Installs dependencies                            |
+| `npm run dev`       | Starts local dev server at `localhost:4321` (English by default) |
+| `npm run start:ja`  | Starts local dev server with `host`              |
+| `npm run start:es`  | Starts local dev server with `host`              |
+| `npm run build`     | Builds the production site to `./dist/`          |
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+## 📝 How to Update Documentation
+
+1. Find the relevant Markdown (`.md`) or MDX (`.mdx`) file inside `src/content/docs/`.
+2. Pages are automatically routed based on their file name.
+3. If adding a new page, make sure to add it to the sidebar navigation in `astro.config.mjs`!
+4. You can embed Mermaid diagrams directly in your markdown thanks to the mermaid plugin integration (`@pasqal-io/starlight-client-mermaid`).
+
+### Useful Links for Maintainers
+- [Starlight Documentation](https://starlight.astro.build/) - For learning how to author content, use components, and customize the site.
+- [Astro Documentation](https://docs.astro.build/) - For understanding the underlying framework.
+- [Mermaid.js Syntax](https://mermaid.js.org/intro/) - For diagram syntax.

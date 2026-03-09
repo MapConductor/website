@@ -1,8 +1,8 @@
 ---
-import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import Hero from '../../components/home/Hero.astro';
-import { YouTube } from 'astro-embed';
-import { Code } from '@astrojs/starlight/components';
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import Hero from "../../components/home/Hero.astro";
+import { YouTube } from "astro-embed";
+import { Code } from "@astrojs/starlight/components";
 
 const code = `MapView(
     onMapClick = {
@@ -15,24 +15,28 @@ const code = `MapView(
 }`;
 
 const content = {
-  title: 'MapConductor',
-  description: 'Escribe el código del mapa una vez. Ejecútalo en cualquier SDK de mapas.',
-  subtitle: 'Una API para todos los SDK de mapas',
+  title: "MapConductor",
+  description:
+    "Escribe el código del mapa una vez. Ejecútalo en cualquier SDK de mapas.",
+  subtitle: "Una API para todos los SDK de mapas",
   heroMessage: `Deja de reescribir\ncódigo de mapas.`,
   buttons: {
-    getStarted: 'Comenzar',
-    android: '⭐ Android SDK',
-    ios: '⭐ iOS SDK'
+    getStarted: "Comenzar",
+    android: "⭐ Android SDK",
+    ios: "⭐ iOS SDK",
+    discord: "Unirse al Discord",
   },
   links: {
-    android: 'https://github.com/MapConductor/android-sdk',
-    ios: 'https://github.com/MapConductor/ios-sdk'
-  }
+    android: "https://github.com/MapConductor/android-sdk",
+    ios: "https://github.com/MapConductor/ios-sdk",
+    discord: "https://discord.gg/Zr6tyX99E4",
+  },
 };
 ---
 
-<StarlightPage frontmatter={{ title: content.title, description: content.description }}>
-
+<StarlightPage
+  frontmatter={{ title: content.title, description: content.description }}
+>
   <Hero
     title={content.title}
     subtitle={content.subtitle}
@@ -41,54 +45,65 @@ const content = {
 
   <!-- PROPUESTA DE VALOR -->
   <div class="sl-markdown-content home-summary">
+    <p>
+      <strong>Escríbelo una vez. Ejecútalo en cualquier SDK de mapas.</strong>
+    </p>
 
-  <p><strong>Escríbelo una vez. Ejecútalo en cualquier SDK de mapas.</strong></p>
-
-  <p>
-  MapConductor es un SDK de mapas unificado y de código abierto para desarrolladores móviles.
-  Usa Google Maps, Mapbox, HERE, ArcGIS y más — todo a través de una sola API consistente.
-  Concéntrate en crear tu experiencia de mapas, no en reescribir código de integración.
-  </p>
-
+    <p>
+      MapConductor es un SDK de mapas unificado y de código abierto para
+      desarrolladores móviles. Usa Google Maps, Mapbox, HERE, ArcGIS y más —
+      todo a través de una sola API consistente. Concéntrate en crear tu
+      experiencia de mapas, no en reescribir código de integración.
+    </p>
   </div>
 
   <!-- CTA -->
   <div style="display:flex; gap:1rem; margin-top:1.25rem; flex-wrap:wrap;">
-  
-    <a class="sl-link-button"
-        href="/intro"
-        style="padding:0.75rem 1.25rem; background:var(--sl-color-accent); color:white; border-radius:0.5rem; font-weight:700;">
+    <a
+      class="sl-link-button"
+      href="/intro"
+      style="padding:0.75rem 1.25rem; background:var(--sl-color-accent); color:white; border-radius:0.5rem; font-weight:700;"
+    >
       {content.buttons.getStarted}
     </a>
-  
-    <a class="sl-link-button"
-        href={content.links.android}
-        target="_blank"
-        style="padding:0.75rem 1.25rem; border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:700;">
+
+    <a
+      class="sl-link-button"
+      href={content.links.android}
+      target="_blank"
+      style="padding:0.75rem 1.25rem; border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:700;"
+    >
       {content.buttons.android}
     </a>
-  
-    <a class="sl-link-button"
-        href={content.links.ios}
-        target="_blank"
-        style="padding:0.75rem 1.25rem; border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:700;">
+
+    <a
+      class="sl-link-button"
+      href={content.links.ios}
+      target="_blank"
+      style="padding:0.75rem 1.25rem; border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:700;"
+    >
       {content.buttons.ios}
     </a>
-  
   </div>
-
 
   <!-- BENEFICIOS RÁPIDOS -->
   <div class="sl-markdown-content home-summary">
     <h2>¿Por qué MapConductor?</h2>
 
     <ul>
-      <li><strong>Una API, múltiples proveedores de mapas</strong> — sin reescribir por cada SDK</li>
-      <li><strong>Cambia de proveedor en cualquier momento</strong> sin dependencia de un solo vendor</li>
-      <li><strong>Diseñado para UI móvil moderna</strong> (Jetpack Compose y SwiftUI)</li>
+      <li>
+        <strong>Una API, múltiples proveedores de mapas</strong> — sin reescribir
+        por cada SDK
+      </li>
+      <li>
+        <strong>Cambia de proveedor en cualquier momento</strong> sin dependencia
+        de un solo vendor
+      </li>
+      <li>
+        <strong>Diseñado para UI móvil moderna</strong> (Jetpack Compose y SwiftUI)
+      </li>
     </ul>
   </div>
-
 
   <!-- CÓDIGO PRIMERO -->
   <div class="sl-markdown-content home-summary">
@@ -96,35 +111,82 @@ const content = {
 
     <Code code={code} lang="kotlin" />
 
-  <p>El mismo código funciona en todos los SDK de mapas compatibles. Piénsalo como un <strong>jQuery para SDK de mapas</strong>.</p>
+    <p>
+      El mismo código funciona en todos los SDK de mapas compatibles. Piénsalo
+      como un <strong>jQuery para SDK de mapas</strong>.
+    </p>
   </div>
   <!-- VIDEO -->
   <h2>Introducción</h2>
-  <YouTube id="https://youtu.be/Sh2GAsM7Qe8" title="Introducción a MapConductor" />
+  <YouTube
+    id="https://youtu.be/Sh2GAsM7Qe8"
+    title="Introducción a MapConductor"
+  />
 
   <!-- FUNCIONALIDADES -->
   <div class="sl-markdown-content home-summary">
     <h2>Funcionalidades clave</h2>
     <ul>
-      <li><strong>Soporte multi-SDK</strong><br/>
-      Opera Google Maps, Mapbox, HERE, ArcGIS y más desde una sola base de código.</li>
+      <li>
+        <strong>Soporte multi-SDK</strong><br />
+        Opera Google Maps, Mapbox, HERE, ArcGIS y más desde una sola base de código.
+      </li>
 
-      <li><strong>API de mapas unificada</strong><br/>
-      Muestra marcadores, formas, controles de cámara y eventos de manera consistente.</li>
+      <li>
+        <strong>API de mapas unificada</strong><br />
+        Muestra marcadores, formas, controles de cámara y eventos de manera consistente.
+      </li>
 
-      <li><strong>Libertad del bloqueo de proveedor</strong><br/>
-      Cambia de proveedor de mapas sin reescribir la lógica de tu aplicación.</li>
+      <li>
+        <strong>Libertad del bloqueo de proveedor</strong><br />
+        Cambia de proveedor de mapas sin reescribir la lógica de tu aplicación.
+      </li>
 
-      <li><strong>Renderizado de alto rendimiento</strong><br/>
-      Algoritmos integrados que manejan miles de marcadores sin problemas.</li>
+      <li>
+        <strong>Renderizado de alto rendimiento</strong><br />
+        Algoritmos integrados que manejan miles de marcadores sin problemas.
+      </li>
 
-      <li><strong>Soporte de UI moderna</strong><br/>
-      Diseñado para flujos de trabajo con Jetpack Compose y SwiftUI.</li>
+      <li>
+        <strong>Soporte de UI moderna</strong><br />
+        Diseñado para flujos de trabajo con Jetpack Compose y SwiftUI.
+      </li>
     </ul>
-  </div> <!-- DEMO -->
+  </div>
+  <!-- DEMO -->
 
   <YouTube id="https://youtu.be/uGjpXKX0a4w" title="Demostración en Android" />
 
+  <!-- Developers Community (Spanish) -->
+  <h2>Comunidad de Desarrolladores</h2>
+  <div class="sl-markdown-content home-summary">
+    <p style="margin-bottom: 1rem;">
+      Estamos abriendo la comunidad de desarrolladores en Discord. Publicaremos
+      información sobre actualizaciones y eventos allí.
+    </p>
+
+    <a
+      class="sl-link-button"
+      href={content.links.discord}
+      target="_blank"
+      style="padding:0.75rem 1.25rem; background:var(--sl-color-accent); color:white; border-radius:0.5rem; font-weight:700;"
+    >
+      {content.buttons.discord}
+    </a>
+  </div>
+
   <h3>Destacado en</h3>
-  <a href="https://orynth.dev/projects/mapconductor" target="_blank" rel="noopener"><img src="https://orynth.dev/api/badge/mapconductor?theme=light&style=default" alt="Featured on Orynth" width="260" height="80" /></a>
+  <div class="sl-markdown-content home-summary">
+    <a
+      href="https://orynth.dev/projects/mapconductor"
+      target="_blank"
+      rel="noopener"
+      ><img
+        src="https://orynth.dev/api/badge/mapconductor?theme=light&style=default"
+        alt="Featured on Orynth"
+        width="260"
+        height="80"
+      />
+    </a>
+  </div>
 </StarlightPage>
