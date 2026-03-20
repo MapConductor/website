@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /* Ensure Tailwind scans Starlight docs content (MD/MDX) and Astro files. */
 @source "../**/*.{astro,html,js,jsx,ts,tsx,md,mdx}";

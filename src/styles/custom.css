@@ -115,9 +115,8 @@
 /* Improve text readability */
 .mermaid text,
 .mermaid-zoom-overlay text {
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN',
-    sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans JP',
+    'Hiragino Kaku Gothic ProN', sans-serif !important;
   font-size: 14px !important;
 }
 
@@ -199,7 +198,7 @@
     }
   }
 }
-[data-theme='dark'] {
+[data-theme="dark"] {
   .welcome {
     .backdrop {
       background-color: #0003;
@@ -212,8 +211,9 @@
 }
 
 @media (max-width: 768px) {
+
   /* Hide "On this page" mobile TOC */
-  nav[aria-labelledby='starlight__on-this-page--mobile'],
+  nav[aria-labelledby="starlight__on-this-page--mobile"],
   #starlight__mobile-toc {
     display: none !important;
   }
@@ -309,9 +309,7 @@
   background: transparent;
   color: var(--sl-color-text);
   cursor: pointer;
-  transition:
-    left 0.3s ease,
-    background 0.2s ease;
+  transition: left 0.3s ease, background 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -347,10 +345,7 @@ nav.sidebar {
 }
 
 .sidebar-pane {
-  transition:
-    width 0.3s ease,
-    min-width 0.3s ease,
-    max-width 0.3s ease;
+  transition: width 0.3s ease, min-width 0.3s ease, max-width 0.3s ease;
 }
 
 .sidebar-pane .sidebar-content {
@@ -381,7 +376,7 @@ body.sidebar-collapsed .sidebar-pane .sidebar-content {
 }
 
 /* Hide h1 title on home page (handled by JavaScript) */
-h1#_top[style*='display: none'] {
+h1#_top[style*="display: none"] {
   display: none !important;
 }
 

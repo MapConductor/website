@@ -1,20 +1,21 @@
 ---
-import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import Hero from '../../components/home/Hero.astro';
-import { YouTube } from 'astro-embed';
-import { Code } from '@astrojs/starlight/components';
-import { useTranslations } from '../../i18n/utils';
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import Hero from "../../components/home/Hero.astro";
+import { YouTube } from "astro-embed";
+import { Code } from "@astrojs/starlight/components";
+import { useTranslations } from "../../i18n/utils";
 
 export function getStaticPaths() {
   return [
     { params: { locale: undefined } }, // Default (English)
-    { params: { locale: 'ja' } },
-    { params: { locale: 'es-419' } },
+    { params: { locale: "ja" } },
+    { params: { locale: "es-419" } },
   ];
 }
 
 const { locale } = Astro.params;
 const t = useTranslations(locale as any);
+
 
 const code = `MapView(
     onMapClick = {
@@ -25,21 +26,28 @@ const code = `MapView(
         Marker(state = markerState)
     }
 }`;
+
 ---
 
-<StarlightPage frontmatter={{ title: t('title'), description: t('description') }}>
-  <Hero title={t('title')} subtitle={t('subtitle')} heroMessage={t('heroMessage')} />
+<StarlightPage
+  frontmatter={{ title: t("title"), description: t("description") }}
+>
+  <Hero
+    title={t("title")}
+    subtitle={t("subtitle")}
+    heroMessage={t("heroMessage")}
+  />
 
   <!-- VALUE PROPOSITION -->
   <div class="sl-markdown-content home-summary">
-    <p set:html={t('home.valueProposition.intro')} />
-    <p set:html={t('home.valueProposition.writeOnce')} />
+    <p set:html={t("home.valueProposition.intro")}></p>
+    <p set:html={t("home.valueProposition.writeOnce")}></p>
   </div>
 
-  <h3 set:html={t('home.platforms.title')} />
+  <h3 set:html={t("home.platforms.title")}></h3>
   <ul>
-    <li set:html={t('home.platforms.android')} />
-    <li set:html={t('home.platforms.ios')} />
+    <li set:html={t("home.platforms.android")}></li>
+    <li set:html={t("home.platforms.ios")}></li>
   </ul>
 
   <!-- CTA: action-first -->
@@ -49,99 +57,89 @@ const code = `MapView(
       href="/intro"
       style="padding:0.75rem 1.25rem; background:var(--sl-color-accent); color:white; border-radius:0.5rem; font-weight:700;"
     >
-      {t('buttons.getStarted')}
+      {t("buttons.getStarted")}
     </a>
 
     <a
       class="sl-link-button"
-      href={t('links.android')}
+      href={t("links.android")}
       target="_blank"
       style="padding:0.75rem 1.25rem; border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:700;"
     >
-      {t('buttons.android')}
+      {t("buttons.android")}
     </a>
 
     <a
       class="sl-link-button"
-      href={t('links.ios')}
+      href={t("links.ios")}
       target="_blank"
       style="padding:0.75rem 1.25rem; border:2px solid var(--sl-color-accent); border-radius:0.5rem; font-weight:700;"
     >
-      {t('buttons.ios')}
+      {t("buttons.ios")}
     </a>
   </div>
 
   <!-- BENEFITS -->
   <div class="sl-markdown-content home-summary" style="margin-top:1.5rem;">
     <ul>
-      <li set:html={t('home.benefits.oneApi')} />
-      <li set:html={t('home.benefits.switchProviders')} />
-      <li set:html={t('home.benefits.modernUi')} />
+      <li set:html={t("home.benefits.oneApi")}></li>
+      <li set:html={t("home.benefits.switchProviders")}></li>
+      <li set:html={t("home.benefits.modernUi")}></li>
     </ul>
   </div>
 
   <!-- CODE FIRST -->
   <div class="sl-markdown-content home-summary">
-    <h2 set:html={t('home.api.title')} />
+    <h2 set:html={t("home.api.title")}></h2>
 
     <Code code={code} lang="kotlin" />
 
-    <p set:html={t('home.api.description')} />
+    <p set:html={t("home.api.description")}></p>
   </div>
 
   <!-- VIDEO -->
-  <h2 set:html={t('home.overview.title')} />
-  <YouTube id="https://youtu.be/Sh2GAsM7Qe8" title="MapConductor Introduction" />
+  <h2 set:html={t("home.overview.title")}></h2>
+  <YouTube
+    id="https://youtu.be/Sh2GAsM7Qe8"
+    title="MapConductor Introduction"
+  />
 
   <!-- FEATURES -->
   <div class="sl-markdown-content home-summary">
-    <h2 set:html={t('home.features.title')} />
+    <h2 set:html={t("home.features.title")}></h2>
     <ul>
-      <li set:html={t('home.features.markers')} />
-      {
-        t('home.features.camera') !== 'home.features.camera' && (
-          <li set:html={t('home.features.camera')} />
-        )
-      }
-      {
-        t('home.features.events') !== 'home.features.events' && (
-          <li set:html={t('home.features.events')} />
-        )
-      }
-      {
-        t('home.features.performance') !== 'home.features.performance' && (
-          <li set:html={t('home.features.performance')} />
-        )
-      }
-      {
-        t('home.features.modernUi') !== 'home.features.modernUi' && (
-          <li set:html={t('home.features.modernUi')} />
-        )
-      }
+      <li set:html={t("home.features.markers")}></li>
+      {t("home.features.camera") !== "home.features.camera" && <li set:html={t("home.features.camera")}></li>}
+      {t("home.features.events") !== "home.features.events" && <li set:html={t("home.features.events")}></li>}
+      {t("home.features.performance") !== "home.features.performance" && <li set:html={t("home.features.performance")}></li>}
+      {t("home.features.modernUi") !== "home.features.modernUi" && <li set:html={t("home.features.modernUi")}></li>}
     </ul>
   </div>
 
-  <h2 set:html={t('home.demo.title')} />
+  <h2 set:html={t("home.demo.title")}></h2>
   <YouTube id="https://youtu.be/uGjpXKX0a4w" title="Android Demonstration" />
 
   <!-- Developers Community -->
-  <h2 set:html={t('home.community.title')} />
+  <h2 set:html={t("home.community.title")}></h2>
   <div class="sl-markdown-content home-summary">
-    <p style="margin-bottom: 1rem;" set:html={t('home.community.description')} />
+    <p style="margin-bottom: 1rem;" set:html={t("home.community.description")}></p>
 
     <a
       class="sl-link-button"
-      href={t('links.discord')}
+      href={t("links.discord")}
       target="_blank"
       style="padding:0.75rem 1.25rem; background:var(--sl-color-accent); color:white; border-radius:0.5rem; font-weight:700;"
     >
-      {t('buttons.discord')}
+      {t("buttons.discord")}
     </a>
   </div>
 
-  <h3 set:html={t('home.featured.title')} />
+  <h3 set:html={t("home.featured.title")}></h3>
   <div class="sl-markdown-content home-summary">
-    <a href="https://orynth.dev/projects/mapconductor" target="_blank" rel="noopener"
+    <a
+      href="https://orynth.dev/projects/mapconductor"
+      target="_blank"
+      rel="noopener"
       ><img
         src="https://orynth.dev/api/badge/mapconductor?theme=light&style=default"
         alt="Featured on Orynth"

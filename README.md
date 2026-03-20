@@ -25,7 +25,6 @@ Inside this Astro + Starlight project, you'll see the following key folders and 
 ## ️🌍 Multiple Languages
 
 MapConductor's documentation supports multiple languages. If you are adding or updating content:
-
 - **English (Root)**: Placed directly in `src/content/docs/`. It acts as the default fallback language.
 - **Japanese**: Placed in `src/content/docs/ja/`
 - **Spanish (Latin America)**: Placed in `src/content/docs/es-419/`
@@ -33,7 +32,6 @@ MapConductor's documentation supports multiple languages. If you are adding or u
 ## 💻 Local Development Environment
 
 We recommend using VS Code for development. Please install the following extensions:
-
 - [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode)
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
@@ -41,13 +39,13 @@ We recommend using VS Code for development. Please install the following extensi
 
 All commands should be run from the root of the project in your terminal.
 
-| Command            | Action                                                           |
-| :----------------- | :--------------------------------------------------------------- |
-| `npm install`      | Installs dependencies                                            |
-| `npm run dev`      | Starts local dev server at `localhost:4321` (English by default) |
-| `npm run start:ja` | Starts local dev server with `host`                              |
-| `npm run start:es` | Starts local dev server with `host`                              |
-| `npm run build`    | Builds the production site to `./dist/`                          |
+| Command             | Action                                           |
+| :------------------ | :----------------------------------------------- |
+| `npm install`       | Installs dependencies                            |
+| `npm run dev`       | Starts local dev server at `localhost:4321` (English by default) |
+| `npm run start:ja`  | Starts local dev server with `host`              |
+| `npm run start:es`  | Starts local dev server with `host`              |
+| `npm run build`     | Builds the production site to `./dist/`          |
 
 ## 📝 How to Update Documentation
 
@@ -57,7 +55,6 @@ All commands should be run from the root of the project in your terminal.
 4. You can embed Mermaid diagrams directly in your markdown thanks to the mermaid plugin integration (`@pasqal-io/starlight-client-mermaid`).
 
 ### Useful Links for Maintainers
-
 - [Starlight Documentation](https://starlight.astro.build/) - For learning how to author content, use components, and customize the site.
 - [Astro Documentation](https://docs.astro.build/) - For understanding the underlying framework.
 - [Mermaid.js Syntax](https://mermaid.js.org/intro/) - For diagram syntax.

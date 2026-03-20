@@ -12,11 +12,7 @@ export type Locale = keyof typeof ui;
 
 // Type helper to flatten nested object keys
 type FlattenKeys<T> = T extends object
-  ? {
-      [K in keyof T]: T[K] extends string
-        ? `${K & string}`
-        : `${K & string}.${FlattenKeys<T[K]> & string}`;
-    }[keyof T]
+  ? { [K in keyof T]: T[K] extends string ? `${K & string}` : `${K & string}.${FlattenKeys<T[K]> & string}` }[keyof T]
   : '';
 
 type TranslationKey = FlattenKeys<typeof en>;

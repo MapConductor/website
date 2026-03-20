@@ -62,3 +62,4 @@ flowchart TB
 ```
 
 Por ahora, el foco principal del proyecto es el SDK de Android y su API unificada. La arquitectura detallada en la nube y las decisiones de implementación se documentarán por separado cuando estén listas para compartirse.
+

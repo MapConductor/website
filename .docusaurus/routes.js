@@ -18,42 +18,42 @@ export default [
                 path: '/es-419/docs/architecture',
                 component: ComponentCreator('/es-419/docs/architecture', '2f8'),
                 exact: true,
-                sidebar: 'docs',
+                sidebar: "docs"
               },
               {
                 path: '/es-419/docs/developers',
                 component: ComponentCreator('/es-419/docs/developers', 'e50'),
                 exact: true,
-                sidebar: 'docs',
+                sidebar: "docs"
               },
               {
                 path: '/es-419/docs/intro',
                 component: ComponentCreator('/es-419/docs/intro', 'af2'),
                 exact: true,
-                sidebar: 'docs',
+                sidebar: "docs"
               },
               {
                 path: '/es-419/docs/roadmap',
                 component: ComponentCreator('/es-419/docs/roadmap', '730'),
                 exact: true,
-                sidebar: 'docs',
+                sidebar: "docs"
               },
               {
                 path: '/es-419/docs/team',
                 component: ComponentCreator('/es-419/docs/team', 'd77'),
                 exact: true,
-                sidebar: 'docs',
-              },
-            ],
-          },
-        ],
-      },
-    ],
+                sidebar: "docs"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     path: '/es-419/',
     component: ComponentCreator('/es-419/', '7a5'),
-    exact: true,
+    exact: true
   },
   {
     path: '*',
