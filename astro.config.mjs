@@ -47,6 +47,7 @@ export default defineConfig({
           label: 'What is MapConductor',
           translations: {
             ja: 'MapConductorについて',
+            'es-419': 'Qué es MapConductor',
           },
           items: [
             {
@@ -54,11 +55,49 @@ export default defineConfig({
               label: 'Overview',
               translations: {
                 ja: '概要',
+                'es-419': 'Resumen',
               },
             },
-            { label: 'Architecture', slug: 'architecture' },
-            { label: 'Roadmap', slug: 'roadmap' },
-            { label: 'Team', slug: 'team' },
+            {
+              label: 'Architecture',
+              slug: 'architecture',
+              translations: {
+                ja: 'アーキテクチャ',
+                'es-419': 'Arquitectura',
+              },
+            },
+            {
+              label: 'Roadmap',
+              slug: 'roadmap',
+              translations: {
+                ja: 'ロードマップ',
+                'es-419': 'Hoja de ruta',
+              },
+            },
+            {
+              label: 'Team',
+              slug: 'team',
+              translations: {
+                ja: 'チーム',
+                'es-419': 'Equipo',
+              },
+            },
+            {
+              label: 'For Developers',
+              slug: 'developers',
+              translations: {
+                ja: '開発者向け',
+                'es-419': 'Para desarrolladores',
+              },
+            },
+            {
+              label: 'Why MapConductor Matters',
+              slug: 'why-mapconductor',
+              translations: {
+                ja: 'MapConductorの必要性',
+                'es-419': 'Por qué importa MapConductor',
+              },
+            },
           ],
         },
         // {
