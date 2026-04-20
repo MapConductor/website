@@ -4,27 +4,43 @@ title: 開発者向け
 sidebar_label: 開発者向け
 ---
 
-MapConductor は、Android 向け地図開発に不慣れな開発者にも扱いやすいことを重視して設計されています。ベンダーごとに新しい API を覚え直すのではなく、1つのAPIを学べば、複数のプロバイダで再利用できることを目指しています。
+MapConductor は、Android・iOS 向け地図開発を行うすべての開発者が扱いやすいように設計されています。ベンダーごとに新しい API を覚え直すのではなく、1つのAPIを学べば、複数のプロバイダやプラットフォームで再利用できることを目指しています。
 
 ## 現在のステータス
 
-- **プラットフォーム**: Android（iOS など他プラットフォームは計画中で、まだ利用できません）
-- **対応している Android 向け地図 SDK**:
-  - Google Maps
-  - Mapbox
-  - ArcGIS Maps SDK
-  - HERE SDK
-  - MapLibre
+### Android
+
+- **対応している地図 SDK**: Google Maps、Mapbox、ArcGIS Maps SDK、HERE SDK、MapLibre
+- **UI フレームワーク**: Jetpack Compose
 - **統一 API 経由で利用できる機能**:
   - 地図の表示
-  - マーカーの追加
+  - マーカーの追加（自由にカスタマイズ可能）
+  - InfoBubble（Jetpack Compose で記述可能）
   - ポリライン・ポリゴンの描画
-  - サークルの描画
-  - グラウンドイメージの追加（現在は Google Maps のみ対応）
+  - メートル単位で半径を指定できる Circle
+  - グラウンドイメージの追加
+  - ヒートマップ
+  - マーカークラスタリング
+  - ラスタレイヤー
 
-## 使い方の概要
+### iOS
 
-以下は、MapConductor（マップコンダクター）の簡単なサンプルコードです。実際の API やインストール手順については、別途用意する MapConductor SDK ドキュメントサイトを参照してください。
+- **対応している地図 SDK**: Google Maps、Mapbox、MapKit、ArcGIS Maps SDK、MapLibre
+- **UI フレームワーク**: SwiftUI
+- **統一 API 経由で利用できる機能**:
+  - 地図の表示
+  - マーカーの追加（自由にカスタマイズ可能）
+  - InfoBubble（SwiftUI で記述可能）
+  - ポリライン・ポリゴンの描画
+  - メートル単位で半径を指定できる Circle
+  - グラウンドイメージの追加
+  - ヒートマップ
+  - マーカークラスタリング
+  - ラスタレイヤー
+
+## Android 使い方の概要
+
+以下は、Android 向け MapConductor の簡単なサンプルコードです。実際の API やインストール手順については、MapConductor Android SDK ドキュメントサイトを参照してください。
 
 ```kotlin
 // 使用する地図SDKのstate
@@ -62,8 +78,8 @@ val circleState =
     }
 
 // 地図の表示
-// Google Maps → GoogleMapViewState
-// Mapbox → MapBoxViewState
+// Google Maps → GoogleMapView
+// Mapbox → MapboxMapView
 MapLibreMapView(
     modifier = modifier,
     state = state,
@@ -74,6 +90,50 @@ MapLibreMapView(
 ) {
     Marker(markerState)
     Circle(circleState)
+}
+```
+
+## iOS 使い方の概要
+
+以下は、iOS 向け MapConductor の簡単なサンプルコードです。実際の API やインストール手順については、MapConductor iOS SDK ドキュメントサイトを参照してください。
+
+```swift
+import SwiftUI
+import MapConductorCore
+import MapConductorForMapLibre
+
+struct ContentView: View {
+    @StateObject private var state = MapLibreViewState(
+        cameraPosition: MapCameraPosition(
+            position: GeoPoint(latitude: 21.324513, longitude: -157.925074),
+            zoom: 5
+        )
+    )
+
+    @State private var markerPosition = GeoPoint(latitude: 21.324513, longitude: -157.925074)
+
+    var body: some View {
+        // Google Maps → GoogleMapView
+        // Mapbox → MapboxMapView
+        // MapKit → MapKitMapView
+        MapLibreMapView(state: state) {
+            Marker(
+                position: markerPosition,
+                icon: DefaultMarkerIcon(label: "T"),
+                draggable: true,
+                onDragEnd: { position in
+                    markerPosition = position
+                }
+            )
+            Circle(
+                center: markerPosition,
+                radiusMeters: 5000,
+                fillColor: UIColor.cyan.withAlphaComponent(0.3),
+                strokeColor: UIColor.magenta,
+                strokeWidth: 2
+            )
+        }
+    }
 }
 ```
 

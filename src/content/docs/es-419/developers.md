@@ -4,27 +4,43 @@ title: Para desarrolladores
 sidebar_label: Para desarrolladores
 ---
 
-MapConductor está diseñado para ser amigable con quienes se inician en el desarrollo de mapas en Android. En lugar de aprender una API diferente para cada proveedor, aprendes un conjunto de conceptos que puedes reutilizar entre varios SDK.
+MapConductor está diseñado para ser amigable con quienes desarrollan apps de mapas en Android e iOS. En lugar de aprender una API diferente para cada proveedor, aprendes un conjunto de conceptos que puedes reutilizar entre varios SDK y plataformas.
 
 ## Estado actual
 
-- **Plataforma**: Android (iOS y otras plataformas están previstas, pero aún no están disponibles).
-- **SDK de mapas para Android compatibles**:
-  - Google Maps
-  - Mapbox
-  - ArcGIS Maps SDK
-  - HERE SDK
-  - MapLibre
+### Android
+
+- **SDK de mapas compatibles**: Google Maps, Mapbox, ArcGIS Maps SDK, HERE SDK, MapLibre
+- **Framework de UI**: Jetpack Compose
 - **Funciones disponibles a través de la API unificada**:
   - Mostrar mapas
-  - Añadir marcadores
+  - Añadir marcadores (totalmente personalizables)
+  - InfoBubble (escrito en Jetpack Compose)
   - Dibujar polilíneas y polígonos
-  - Dibujar círculos
-  - Añadir imágenes de fondo (actualmente solo en Google Maps)
+  - Círculo con radio en metros
+  - Añadir imágenes de fondo
+  - Mapas de calor
+  - Agrupación de marcadores (clustering)
+  - Capas ráster
 
-## Ejemplo de uso
+### iOS
 
-El siguiente es un código de muestra simple para MapConductor. Para obtener detalles completos de la API e instrucciones de instalación, consulta el sitio de documentación del SDK de MapConductor por separado.
+- **SDK de mapas compatibles**: Google Maps, Mapbox, MapKit, ArcGIS Maps SDK, MapLibre
+- **Framework de UI**: SwiftUI
+- **Funciones disponibles a través de la API unificada**:
+  - Mostrar mapas
+  - Añadir marcadores (totalmente personalizables)
+  - InfoBubble (escrito en SwiftUI)
+  - Dibujar polilíneas y polígonos
+  - Círculo con radio en metros
+  - Añadir imágenes de fondo
+  - Mapas de calor
+  - Agrupación de marcadores (clustering)
+  - Capas ráster
+
+## Ejemplo de uso en Android
+
+El siguiente es un código de muestra simple para MapConductor en Android. Para obtener detalles completos de la API e instrucciones de instalación, consulta el sitio de documentación del SDK de Android de MapConductor.
 
 ```kotlin
 // State del SDK de mapas que deseas usar
@@ -62,8 +78,8 @@ val circleState =
     }
 
 // Mostrar el mapa
-// Google Maps → GoogleMapViewState
-// Mapbox → MapBoxViewState
+// Google Maps → GoogleMapView
+// Mapbox → MapboxMapView
 MapLibreMapView(
     modifier = modifier,
     state = state,
@@ -74,6 +90,50 @@ MapLibreMapView(
 ) {
     Marker(markerState)
     Circle(circleState)
+}
+```
+
+## Ejemplo de uso en iOS
+
+El siguiente es un código de muestra simple para MapConductor en iOS. Para obtener detalles completos de la API e instrucciones de instalación, consulta el sitio de documentación del SDK de iOS de MapConductor.
+
+```swift
+import SwiftUI
+import MapConductorCore
+import MapConductorForMapLibre
+
+struct ContentView: View {
+    @StateObject private var state = MapLibreViewState(
+        cameraPosition: MapCameraPosition(
+            position: GeoPoint(latitude: 21.324513, longitude: -157.925074),
+            zoom: 5
+        )
+    )
+
+    @State private var markerPosition = GeoPoint(latitude: 21.324513, longitude: -157.925074)
+
+    var body: some View {
+        // Google Maps → GoogleMapView
+        // Mapbox → MapboxMapView
+        // MapKit → MapKitMapView
+        MapLibreMapView(state: state) {
+            Marker(
+                position: markerPosition,
+                icon: DefaultMarkerIcon(label: "T"),
+                draggable: true,
+                onDragEnd: { position in
+                    markerPosition = position
+                }
+            )
+            Circle(
+                center: markerPosition,
+                radiusMeters: 5000,
+                fillColor: UIColor.cyan.withAlphaComponent(0.3),
+                strokeColor: UIColor.magenta,
+                strokeWidth: 2
+            )
+        }
+    }
 }
 ```
 

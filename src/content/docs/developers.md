@@ -4,27 +4,43 @@ title: For Developers
 sidebar_label: For Developers
 ---
 
-MapConductor is designed to be friendly to developers who are new to Android map development. Instead of learning a new API for each vendor, you learn one set of concepts and reuse them across providers.
+MapConductor is designed to be friendly to developers building map apps on Android and iOS. Instead of learning a new API for each vendor, you learn one set of concepts and reuse them across providers and platforms.
 
 ## Current Status
 
-- **Platform**: Android (iOS and other platforms are planned, but not available yet).
-- **Supported Android map SDKs**:
-  - Google Maps
-  - Mapbox
-  - ArcGIS Maps SDK
-  - HERE SDK
-  - MapLibre
+### Android
+
+- **Supported map SDKs**: Google Maps, Mapbox, ArcGIS Maps SDK, HERE SDK, MapLibre
+- **UI framework**: Jetpack Compose
 - **Features available through the unified API**:
   - Displaying maps
-  - Adding markers
-  - Drawing polylines and polygons
-  - Drawing circles
-  - Adding ground images (currently supported on Google Maps only)
+  - Markers (fully customizable)
+  - InfoBubble (written in Jetpack Compose)
+  - Polylines and polygons
+  - Circles with meter-based radius
+  - Ground images
+  - Heatmaps
+  - Marker clustering
+  - Raster layers
 
-## Usage Example
+### iOS
 
-The following is a simple sample code for MapConductor. For actual API details and installation instructions, please refer to the separate MapConductor SDK documentation site.
+- **Supported map SDKs**: Google Maps, Mapbox, MapKit, ArcGIS Maps SDK, MapLibre
+- **UI framework**: SwiftUI
+- **Features available through the unified API**:
+  - Displaying maps
+  - Markers (fully customizable)
+  - InfoBubble (written in SwiftUI)
+  - Polylines and polygons
+  - Circles with meter-based radius
+  - Ground images
+  - Heatmaps
+  - Marker clustering
+  - Raster layers
+
+## Android Usage Example
+
+The following is a simple sample code for MapConductor on Android. For actual API details and installation instructions, please refer to the separate MapConductor Android SDK documentation site.
 
 ```kotlin
 // State for the map SDK you want to use
@@ -62,8 +78,8 @@ val circleState =
     }
 
 // Display the map
-// Google Maps → GoogleMapViewState
-// Mapbox → MapBoxViewState
+// Google Maps → GoogleMapView
+// Mapbox → MapboxMapView
 MapLibreMapView(
     modifier = modifier,
     state = state,
@@ -74,6 +90,50 @@ MapLibreMapView(
 ) {
     Marker(markerState)
     Circle(circleState)
+}
+```
+
+## iOS Usage Example
+
+The following is a simple sample code for MapConductor on iOS. For actual API details and installation instructions, please refer to the separate MapConductor iOS SDK documentation site.
+
+```swift
+import SwiftUI
+import MapConductorCore
+import MapConductorForMapLibre
+
+struct ContentView: View {
+    @StateObject private var state = MapLibreViewState(
+        cameraPosition: MapCameraPosition(
+            position: GeoPoint(latitude: 21.324513, longitude: -157.925074),
+            zoom: 5
+        )
+    )
+
+    @State private var markerPosition = GeoPoint(latitude: 21.324513, longitude: -157.925074)
+
+    var body: some View {
+        // Google Maps → GoogleMapView
+        // Mapbox → MapboxMapView
+        // MapKit → MapKitMapView
+        MapLibreMapView(state: state) {
+            Marker(
+                position: markerPosition,
+                icon: DefaultMarkerIcon(label: "T"),
+                draggable: true,
+                onDragEnd: { position in
+                    markerPosition = position
+                }
+            )
+            Circle(
+                center: markerPosition,
+                radiusMeters: 5000,
+                fillColor: UIColor.cyan.withAlphaComponent(0.3),
+                strokeColor: UIColor.magenta,
+                strokeWidth: 2
+            )
+        }
+    }
 }
 ```
 

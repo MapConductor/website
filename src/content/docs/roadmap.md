@@ -4,17 +4,22 @@ title: Roadmap & Community
 sidebar_label: Roadmap & Community
 ---
 
-MapConductor is still in an early but active stage. Our short‑term priority is to make the Android SDK stable and practical for real projects, while keeping the API simple enough for beginners.
+MapConductor is in active development. Both the Android SDK and the iOS SDK are now released and available for real projects.
+
+## Current status
+
+- **Android SDK** — Released. Supports Google Maps, Mapbox, ArcGIS, HERE, and MapLibre via Jetpack Compose.
+- **iOS SDK** — Released. Supports Google Maps, Mapbox, MapKit, ArcGIS, and MapLibre via SwiftUI.
 
 ## Short‑term goals (in progress)
 
-- Harden the Android SDK and improve the developer experience.
-- Expand and refine support for Google Maps, Mapbox, ArcGIS, HERE, and MapLibre.
+- Improve stability and developer experience across both Android and iOS SDKs.
+- Expand and refine support for all map providers on both platforms.
 - Provide clear tutorials and examples for common general‑purpose location‑based applications.
 
 ## Medium‑term goals
 
-- Prototype an iOS SDK with a similar unified API.
+- Explore a Flutter SDK with a similar unified API.
 - Explore additional map overlays and interactive features.
 - Design high‑level cloud concepts for data synchronization and geofencing, without locking developers into any single provider.
 
@@ -24,7 +29,7 @@ This project started as a personal effort based on real‑world experience build
 
 Looking ahead, we are seeking acceptance into NLnet's Mobifree programme and as an official OSGeo Foundation project to enable long‑term development with contributors from around the world.
 
-Today, the Android SDK is already released and used in demo applications, with the next version planned soon. During the Mobifree funding period we plan to further stabilise the Android SDK and develop an iOS SDK (and, if possible, a Flutter SDK), including advanced features such as marker clustering and raster/vector tile rendering.
+Both the Android and iOS SDKs are already released and used in demo applications. During the Mobifree funding period we plan to further stabilise both SDKs and explore a Flutter SDK, including advanced features such as marker clustering and raster/vector tile rendering.
 
 Funding would also support outreach and community building: speaking at events around the world, running community activities such as bug‑hunting or contributor recognition, and creating space for new contributors to join the core development.
 

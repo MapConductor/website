@@ -6,14 +6,14 @@ sidebar_label: アーキテクチャ
 
 MapConductor はアプリケーションと各種地図 SDK の橋渡しを行います。アプリは統一されたクラスとメソッド群を通じて MapConductor にアクセスし、MapConductor が選択された地図プロバイダへ処理を転送します。
 
-例えば、MapConductor 経由でマーカーを追加したりポリゴンを描画すると、内部では Android 向けの Google Maps、Mapbox、ArcGIS、HERE、MapLibre のそれぞれに適切な呼び出しが行われます。
+MapConductor は Android（Kotlin + Jetpack Compose）と iOS（Swift + SwiftUI）の両方に対応しており、それぞれプラットフォーム向けの SDK パッケージが共通の設計思想に基づいて提供されています。
 
-## コアアーキテクチャ
+## Android アーキテクチャ
 
 ```mermaid
 flowchart TB
-  subgraph App["アプリ"]
-    UI["UIとビジネスロジック"]
+  subgraph App["アプリ (Android)"]
+    UI["UIとビジネスロジック<br/>(Jetpack Compose)"]
   end
 
   subgraph MC["MapConductor SDK (Android)"]
@@ -37,6 +37,38 @@ flowchart TB
   Drivers --> Mapbox
   Drivers --> ArcGIS
   Drivers --> HERE
+  Drivers --> MapLibre
+```
+
+## iOS アーキテクチャ
+
+```mermaid
+flowchart TB
+  subgraph App["アプリ (iOS)"]
+    UI["UIとビジネスロジック<br/>(SwiftUI)"]
+  end
+
+  subgraph MC["MapConductor SDK (iOS)"]
+    API["統一された地図API"]
+    Core["コア機能<br/>(map, markers, shapes, events)"]
+    Drivers["各地図SDKドライバー"]
+  end
+
+  subgraph Providers["地図SDKプロバイダー"]
+    GMaps["Google Maps"]
+    Mapbox["Mapbox"]
+    MapKit["MapKit"]
+    ArcGIS["ArcGIS Maps SDK"]
+    MapLibre["MapLibre"]
+  end
+
+  UI --> API
+  API --> Core
+  Core --> Drivers
+  Drivers --> GMaps
+  Drivers --> Mapbox
+  Drivers --> MapKit
+  Drivers --> ArcGIS
   Drivers --> MapLibre
 ```
 

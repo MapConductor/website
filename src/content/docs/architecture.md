@@ -6,14 +6,14 @@ sidebar_label: Architecture
 
 At a high level, MapConductor sits between your app and the underlying map SDKs. Your app talks to MapConductor using a unified set of classes and methods. MapConductor then forwards those operations to the selected map provider.
 
-For example, you can add a marker or draw a polygon through MapConductor, and MapConductor will translate that into the correct calls for Google Maps, Mapbox, ArcGIS, HERE, or MapLibre on Android.
+MapConductor is available for both Android (Kotlin + Jetpack Compose) and iOS (Swift + SwiftUI), each with its own SDK package built on a shared design.
 
-## Core architecture
+## Android architecture
 
 ```mermaid
 flowchart TB
-  subgraph App["Your app"]
-    UI["UI & business logic"]
+  subgraph App["Your app (Android)"]
+    UI["UI & business logic<br/>(Jetpack Compose)"]
   end
 
   subgraph MC["MapConductor SDK (Android)"]
@@ -37,6 +37,38 @@ flowchart TB
   Drivers --> Mapbox
   Drivers --> ArcGIS
   Drivers --> HERE
+  Drivers --> MapLibre
+```
+
+## iOS architecture
+
+```mermaid
+flowchart TB
+  subgraph App["Your app (iOS)"]
+    UI["UI & business logic<br/>(SwiftUI)"]
+  end
+
+  subgraph MC["MapConductor SDK (iOS)"]
+    API["Unified Map API"]
+    Core["Core features<br/>(map, markers, shapes, events)"]
+    Drivers["Map SDK drivers"]
+  end
+
+  subgraph Providers["Map SDK providers"]
+    GMaps["Google Maps"]
+    Mapbox["Mapbox"]
+    MapKit["MapKit"]
+    ArcGIS["ArcGIS Maps SDK"]
+    MapLibre["MapLibre"]
+  end
+
+  UI --> API
+  API --> Core
+  Core --> Drivers
+  Drivers --> GMaps
+  Drivers --> Mapbox
+  Drivers --> MapKit
+  Drivers --> ArcGIS
   Drivers --> MapLibre
 ```
 
