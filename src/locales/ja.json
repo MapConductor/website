@@ -10,8 +10,8 @@
     "discord": "Discord に参加する"
   },
   "links": {
-    "android": "https://github.com/MapConductor/android-sdk",
-    "ios": "https://github.com/MapConductor/ios-sdk",
+    "android": "https://docs-android.mapconductor.com/ja/",
+    "ios": "hhttps://docs-ios.mapconductor.com/ja/",
     "discord": "https://discord.gg/Zr6tyX99E4"
   },
   "home": {
