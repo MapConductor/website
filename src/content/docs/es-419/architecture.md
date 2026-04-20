@@ -49,16 +49,3 @@ Desde el punto de vista de la persona desarrolladora:
 ## Alcance de la abstracción
 
 MapConductor no intenta envolver todas las capacidades de cada SDK de mapas. Se enfoca en operaciones comunes como mostrar el mapa, marcadores y figuras básicas, pero sigue permitiendo el acceso a las instancias nativas del mapa cuando se necesitan funciones específicas de un proveedor. De este modo, la API compartida se mantiene simple y portable sin sacrificar lo que hace único a cada proveedor.
-
-## Visión futura en la nube (resumen)
-
-A largo plazo, también imaginamos componentes opcionales en la nube que ayuden con la sincronización de datos, geocercas e integración con sistemas externos. Estos componentes del lado del servidor siguen en fase de diseño y todavía no forman parte del SDK público actual.
-
-```mermaid
-flowchart TB
-  App["Mobile apps"] --> MCSDK["MapConductor SDK"]
-  MCSDK --> Cloud["Future MapConductor cloud<br/>(sync & geofencing)"]
-  Cloud --> External["External systems<br/>(dashboards, services)"]
-```
-
-Por ahora, el foco principal del proyecto es el SDK de Android y su API unificada. La arquitectura detallada en la nube y las decisiones de implementación se documentarán por separado cuando estén listas para compartirse.

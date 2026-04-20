@@ -49,16 +49,3 @@ From the developer’s point of view:
 ## Scope of abstraction
 
 MapConductor does not try to wrap every single capability of each map SDK. Instead, it focuses on common operations such as showing a map, markers, and basic shapes, while still giving developers access to the underlying native map instances when they need provider‑specific features. This keeps the shared API simple and portable without sacrificing what makes each provider unique.
-
-## Future cloud vision (abstract)
-
-In the long term, we also envision optional cloud components that can help with data synchronization, geofencing, and integration with external systems. These cloud‑side pieces are still in the design phase and not part of the current public SDK.
-
-```mermaid
-flowchart TB
-  App["Mobile apps"] --> MCSDK["MapConductor SDK"]
-  MCSDK --> Cloud["Future MapConductor cloud<br/>(sync & geofencing)"]
-  Cloud --> External["External systems<br/>(dashboards, services)"]
-```
-
-For now, the main focus of the project is the Android SDK and its unified API. Detailed cloud architecture and implementation choices will be documented separately when they are ready to share.

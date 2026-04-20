@@ -49,16 +49,3 @@ flowchart TB
 ## 抽象化の範囲
 
 MapConductor は、各地図 SDK が提供するすべての機能をラップしようとはしません。地図表示やマーカー、基本的な図形描画など、共通してよく使われる操作にフォーカスしつつ、必要な場合にはネイティブの地図インスタンスに直接アクセスできるようにしています。これにより、共通 API はシンプルで移植性が高いまま、各プロバイダ固有の強みも損なわない設計になっています。
-
-## 将来のクラウド構想（概要）
-
-長期的には、データ同期やジオフェンシング、外部システム連携を支援するオプションのクラウドコンポーネントも構想しています。これらクラウド側の仕組みはまだ設計段階であり、現時点の公開 SDK には含まれていません。
-
-```mermaid
-flowchart TB
-  App["Mobile apps"] --> MCSDK["MapConductor SDK"]
-  MCSDK --> Cloud["Future MapConductor cloud<br/>(sync & geofencing)"]
-  Cloud --> External["External systems<br/>(dashboards, services)"]
-```
-
-当面の重点は、Android SDK とその統一 API にあります。クラウドアーキテクチャの詳細や実装選択については、公開の準備が整い次第、別途ドキュメントとしてまとめる予定です。
