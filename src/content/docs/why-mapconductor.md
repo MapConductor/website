@@ -1,6 +1,10 @@
 ---
 title: Why MapConductor Matters
-description: A concise explanation of why working directly with map SDKs gets complex and what MapConductor solves.
+head:
+  - tag: meta
+    attrs:
+      name: description
+      content: A concise explanation of why working directly with map SDKs gets complex and what MapConductor solves.
 sidebar_label: Why MapConductor Matters
 ---
 

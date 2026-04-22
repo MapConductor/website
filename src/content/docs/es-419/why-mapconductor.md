@@ -1,6 +1,10 @@
 ---
 title: Por qué importa MapConductor
-description: Una explicación breve de por qué trabajar directamente con SDK de mapas se vuelve complejo y qué resuelve MapConductor.
+head:
+  - tag: meta
+    attrs:
+      name: description
+      content: Una explicación breve de por qué trabajar directamente con SDK de mapas se vuelve complejo y qué resuelve MapConductor.
 sidebar_label: Por qué importa MapConductor
 ---
 

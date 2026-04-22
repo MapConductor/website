@@ -1,6 +1,10 @@
 ---
 title: なぜMapConductorが必要なのか
-description: 地図SDKを直接扱うと何が難しく、MapConductorがどこを解決するのかを簡潔に説明します。
+head:
+  - tag: meta
+    attrs:
+      name: description
+      content: 地図SDKを直接扱うと何が難しく、MapConductorがどこを解決するのかを簡潔に説明します
 sidebar_label: MapConductorの必要性
 ---
 
