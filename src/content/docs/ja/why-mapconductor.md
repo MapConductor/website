@@ -4,7 +4,7 @@ head:
   - tag: meta
     attrs:
       name: description
-      content: 地図SDKを直接扱うと何が難しく、MapConductorがどこを解決するのかを簡潔に説明します
+      content: 地図SDKを直接扱うと複雑になりやすい理由と、MapConductorが共通APIと状態管理でその複雑さを減らす仕組みを説明します。
 sidebar_label: MapConductorの必要性
 ---
 

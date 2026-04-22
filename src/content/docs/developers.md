@@ -1,6 +1,11 @@
 ---
 id: developers
 title: For Developers
+head:
+  - tag: meta
+    attrs:
+      name: description
+      content: Developer overview of MapConductor support on Android and iOS, including supported map providers, unified API features, and sample usage.
 sidebar_label: For Developers
 ---
 

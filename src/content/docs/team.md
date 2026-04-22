@@ -1,6 +1,11 @@
 ---
 id: team
 title: Team
+head:
+  - tag: meta
+    attrs:
+      name: description
+      content: Meet the MapConductor team, including founder and lead developer Katsumata Masashi and co-maintainer Takaaki Omori.
 sidebar_label: Team
 ---
 

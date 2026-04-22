@@ -1,6 +1,11 @@
 ---
 id: architecture
 title: High‑Level Architecture
+head:
+  - tag: meta
+    attrs:
+      name: description
+      content: High-level architecture of MapConductor, showing how the unified API, core layer, and provider drivers connect apps to Android and iOS map SDKs.
 sidebar_label: Architecture
 ---
 

@@ -1,6 +1,11 @@
 ---
 id: architecture
 title: Arquitectura de alto nivel
+head:
+  - tag: meta
+    attrs:
+      name: description
+      content: Arquitectura de alto nivel de MapConductor, mostrando cómo la API unificada, la capa Core y los drivers conectan apps con SDK de mapas.
 sidebar_label: Arquitectura
 ---
 

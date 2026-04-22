@@ -1,6 +1,11 @@
 ---
 id: architecture
 title: アーキテクチャ概要
+head:
+  - tag: meta
+    attrs:
+      name: description
+      content: MapConductorの統一API、Coreレイヤー、各地図SDKドライバーがAndroid・iOSアプリと地図プロバイダをつなぐ仕組みを説明します。
 sidebar_label: アーキテクチャ
 ---
 

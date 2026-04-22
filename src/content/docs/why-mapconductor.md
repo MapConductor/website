@@ -4,7 +4,7 @@ head:
   - tag: meta
     attrs:
       name: description
-      content: A concise explanation of why working directly with map SDKs gets complex and what MapConductor solves.
+      content: Why direct map SDK integration becomes complex, and how MapConductor reduces that complexity with a shared state-driven API.
 sidebar_label: Why MapConductor Matters
 ---
 

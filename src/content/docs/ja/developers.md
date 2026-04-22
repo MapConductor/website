@@ -1,6 +1,11 @@
 ---
 id: developers
 title: 開発者向け
+head:
+  - tag: meta
+    attrs:
+      name: description
+      content: MapConductorのAndroid・iOS対応状況、対応地図プロバイダ、統一APIで利用できる機能、基本的な使い方を紹介します。
 sidebar_label: 開発者向け
 ---
 

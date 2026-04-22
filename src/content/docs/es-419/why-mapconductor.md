@@ -4,7 +4,7 @@ head:
   - tag: meta
     attrs:
       name: description
-      content: Una explicación breve de por qué trabajar directamente con SDK de mapas se vuelve complejo y qué resuelve MapConductor.
+      content: Por qué la integración directa con SDK de mapas se vuelve compleja y cómo MapConductor reduce esa complejidad con una API compartida.
 sidebar_label: Por qué importa MapConductor
 ---
 

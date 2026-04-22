@@ -1,6 +1,11 @@
 ---
 id: team
 title: チーム
+head:
+  - tag: meta
+    attrs:
+      name: description
+      content: MapConductorの創設者・リード開発者である勝又雅史と、共同メンテナの大森高明を紹介します。
 sidebar_label: チーム
 ---
 

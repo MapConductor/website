@@ -1,6 +1,11 @@
 ---
 id: roadmap
 title: ロードマップとコミュニティ
+head:
+  - tag: meta
+    attrs:
+      name: description
+      content: MapConductorのAndroid・iOS SDKの現状、今後の開発計画、Flutter対応の検討、コミュニティ運営方針を紹介します。
 sidebar_label: ロードマップとコミュニティ
 ---
 

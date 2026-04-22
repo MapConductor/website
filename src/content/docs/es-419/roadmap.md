@@ -1,6 +1,11 @@
 ---
 id: roadmap
 title: Hoja de ruta y comunidad
+head:
+  - tag: meta
+    attrs:
+      name: description
+      content: Hoja de ruta y planes de comunidad de MapConductor, incluyendo estado de los SDK de Android e iOS, Flutter, financiación y gobernanza.
 sidebar_label: Hoja de ruta y comunidad
 ---
 

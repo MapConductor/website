@@ -1,6 +1,11 @@
 ---
 id: roadmap
 title: Roadmap & Community
+head:
+  - tag: meta
+    attrs:
+      name: description
+      content: Roadmap and community plans for MapConductor, covering Android and iOS SDK status, future Flutter work, funding, and governance.
 sidebar_label: Roadmap & Community
 ---
 
